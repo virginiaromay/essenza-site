@@ -2,6 +2,7 @@
 
 Este repositorio contiene el sitio estático de Essenza, listo para publicarse con tu dominio.
 
+
 ## Pasos rápidos
 1) Crea un repo en GitHub llamado `essenza-site` en la cuenta **virginiaromay**.
 2) Sube **estos archivos** (el contenido de esta carpeta, no el ZIP):
