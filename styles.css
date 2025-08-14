@@ -282,3 +282,37 @@ textarea{resize:vertical}
 .hero-overlay .hero-content a {
   color: white !important;
 }
+/* ==== Nuke estilos del hero antiguo SOLO en overlay ==== */
+.hero.hero-overlay { 
+  padding: 0 !important; 
+  background: transparent !important;  /* quita el fondo "gris/beige" del antiguo .hero */
+}
+
+/* nada de bordes redondeados ni fondos en el slider/imágenes */
+.hero.hero-overlay .hero-slider,
+.hero.hero-overlay .hero-slide img {
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* el overlay oscuro para legibilidad (ajusta si lo quieres más/menos oscuro) */
+.hero.hero-overlay::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.40);  /* subí a .40 para que el texto resalte más */
+  z-index: 1;
+}
+
+/* texto 100% blanco sobre la imagen */
+.hero.hero-overlay .hero-content,
+.hero.hero-overlay .hero-content h1,
+.hero.hero-overlay .hero-content .lede,
+.hero.hero-overlay .hero-content a {
+  color: #fff !important;
+}
+
+/* asegúrate que la imagen cubre todo y sin esquinas */
+.hero.hero-overlay .hero-slide img {
+  width: 100%; height: 100%; object-fit: cover;
+}
