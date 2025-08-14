@@ -21,7 +21,7 @@ h1{font-weight:300;font-size:clamp(2rem,4vw,3.2rem)}h2{font-weight:300;font-size
 .btn-small {
     padding: .45rem .8rem;
     font-size: .9rem;
-    color: white; /* texto blanco */
+    color: white !important; /* texto blanco */
 }
 .menu-toggle{display:none;background:none;border:0;font-size:1.4rem}
 
