@@ -32,34 +32,34 @@
   </header>
 
   <main id="inicio">
-<!-- ===================== HERO (FULL-BLEED) ===================== -->
-<section class="hero hero-bleed" id="inicio">
-  <div class="hero-wrap">
-    <!-- Columna izquierda: texto -->
-    <div class="hero-copy">
-      <h1>Espacios para poder ser</h1>
-      <p class="lede">Diseño es solución, expresión e intención. Creamos espacios elegantes y funcionales que conectan esencia y confort.</p>
-      <a class="btn" href="#contacto">Conversemos tu proyecto</a>
-    </div>
+<!-- ===================== HERO (OVERLAY) ===================== -->
+<section class="hero hero-overlay" id="inicio">
+  <!-- Slider de fondo -->
+  <div class="hero-slider" id="hero-slider" aria-label="Galería de proyectos">
+    <figure class="hero-slide is-active">
+      <img src="assets/images/hero/Bosque(5).jpg" alt="Proyecto 1" loading="eager">
+    </figure>
+    <figure class="hero-slide">
+      <img src="assets/images/hero/Bosque(6).jpg" alt="Proyecto 2" loading="lazy">
+    </figure>
 
-    <!-- Columna derecha: imagen/slider a todo alto -->
-    <div class="hero-media">
-      <div class="hero-slider" id="hero-slider" aria-label="Galería de proyectos">
-        <figure class="hero-slide is-active">
-          <img src="assets/images/hero/Bosque(5).jpg" alt="Proyecto 1" loading="eager" />
-        </figure>
-        <figure class="hero-slide">
-          <img src="assets/images/hero/Bosque(6).jpg" alt="Proyecto 2" loading="lazy" />
-        </figure>
+    <!-- Controles -->
+    <button class="hero-nav prev" aria-label="Anterior">‹</button>
+    <button class="hero-nav next" aria-label="Siguiente">›</button>
 
-        <button class="hero-nav prev" aria-label="Anterior">‹</button>
-        <button class="hero-nav next" aria-label="Siguiente">›</button>
-        <div class="hero-dots" id="hero-dots" aria-label="Paginación del slider"></div>
-      </div>
-    </div>
+    <!-- Puntos -->
+    <div class="hero-dots" id="hero-dots" aria-label="Paginación del slider"></div>
+  </div>
+
+  <!-- Contenido SOBRE la imagen -->
+  <div class="hero-content">
+    <h1>Espacios para poder ser</h1>
+    <p class="lede">Diseño es solución, expresión e intención. Creamos espacios elegantes y funcionales que conectan esencia y confort.</p>
+    <a class="btn" href="#contacto">Conversemos tu proyecto</a>
   </div>
 </section>
 
+    
     <!-- ===================== QUIÉNES SOMOS ===================== -->
     <section id="quienes" class="section">
       <div class="container">
