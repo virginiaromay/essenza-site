@@ -117,3 +117,33 @@ textarea{resize:vertical}
   /* Hero overlay en móvil: un poco menos alto para que quepa el header */
   .hero-overlay{height:80vh}
 }
+/* Hero a pantalla completa sin márgenes ni bordes */
+.hero-overlay {
+  position: relative;
+  width: 100vw; /* ancho completo de la ventana */
+  height: 100vh; /* alto completo de la ventana */
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.hero-overlay .hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+}
+
+/* Eliminar márgenes de html y body */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Si hay contenedor padre que limita el ancho */
+.container, .section, .hero {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
