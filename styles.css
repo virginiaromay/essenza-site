@@ -379,3 +379,69 @@ body {
   border-radius: 0 !important;
   display: block;
 }
+/* === Anti-gutter global: evita que se asome el fondo a los costados === */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body {
+  overflow-x: hidden;                /* oculta cualquier desborde lateral */
+}
+
+/* === HERO FULL-BLEED sin marcos, de borde a borde === */
+.hero-overlay{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;                /* rompe el padding del contenedor padre */
+  margin-right: -50vw;
+  width: 100vw;                      /* ocupa todo el viewport */
+  height: 100vh;                     /* pantalla completa */
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+  max-width: none !important;
+}
+
+/* El slider cubre todo y no tiene fondo ni esquinas */
+.hero-overlay .hero-slider{
+  position: absolute; inset: 0;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.hero-overlay .hero-slide{
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity .6s ease;
+  background: transparent !important;
+}
+.hero-overlay .hero-slide.is-active{ opacity: 1; }
+.hero-overlay .hero-slide img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+  display: block;
+}
+
+/* Capa oscura para legibilidad del texto (ajusta opacidad a gusto) */
+.hero-overlay::before{
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.40);
+  z-index: 1;
+}
+
+/* Contenido encima */
+.hero-overlay .hero-content{
+  position: relative; z-index: 2;
+  color: #fff;
+  text-align: center;
+  top: 50%; transform: translateY(-50%);
+  max-width: 800px; margin: 0 auto; padding: 0 20px;
+}
+
+/* En móvil: un poquito menos alto para no pelear con el header */
+@media (max-width: 900px){
+  .hero-overlay{ height: 80vh; }
+}
