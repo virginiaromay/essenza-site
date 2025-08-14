@@ -87,3 +87,66 @@ textarea{resize:vertical}
   .menu.show{display:flex}
   .menu-toggle{display:inline-block}
 }
+/* ===================== HERO SLIDER ===================== */
+.hero-media { position: relative; }
+.hero-slider {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-height: 360px;
+  background: #f1f1f1;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .6s ease;
+  will-change: opacity;
+}
+.hero-slide.is-active { opacity: 1; }
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Flechas */
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+}
+.hero-nav:hover { background: rgba(0,0,0,.6); }
+.hero-nav.prev { left: 10px; }
+.hero-nav.next { right: 10px; }
+
+/* Puntos */
+.hero-dots {
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  bottom: 10px;
+  display: flex; gap: 6px;
+}
+.hero-dots button {
+  width: 8px; height: 8px; border-radius: 50%;
+  border: 0;
+  background: rgba(255,255,255,.6);
+  cursor: pointer;
+}
+.hero-dots button.is-active { background: #fff; }
+
+/* Responsive: una sola columna en móvil (ya tienes esta regla) */
+@media (max-width:900px){
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-slider { min-height: 280px; }
+}
