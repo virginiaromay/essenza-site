@@ -272,3 +272,13 @@ textarea{resize:vertical}
   background: rgba(0,0,0,0.35); /* puedes ajustar la opacidad */
   z-index: 1;
 }
+
+.hero-overlay .hero-slider {
+  background: none !important;
+  border-radius: 0 !important;
+}
+.hero-overlay .hero-content h1,
+.hero-overlay .hero-content p,
+.hero-overlay .hero-content a {
+  color: white !important;
+}
