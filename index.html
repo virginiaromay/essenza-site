@@ -40,9 +40,39 @@
           <p class="lede">Diseño es solución, expresión e intención. Creamos espacios elegantes y funcionales que conectan esencia y confort.</p>
           <a class="btn" href="#contacto">Conversemos tu proyecto</a>
         </div>
-        <div class="hero-media" aria-hidden="true">
-          <img src="https://picsum.photos/seed/essenza-hero/1200/800" alt="Interior contemporáneo" loading="lazy">
-        </div>
+        <!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1>Espacios para poder ser</h1>
+      <p class="lede">Diseño es solución, expresión e intención. Creamos espacios elegantes y funcionales que conectan esencia y confort.</p>
+      <a class="btn" href="#contacto">Conversemos tu proyecto</a>
+    </div>
+
+    <!-- ===================== HERO SLIDER (proyectos) ===================== -->
+    <div class="hero-media">
+      <div class="hero-slider" id="hero-slider" aria-label="Galería de proyectos">
+        <!-- Diapositivas: duplica/edita según necesites -->
+        <figure class="hero-slide is-active">
+          <img src="assets/images/hero/Alcides(1).jpg" alt="Proyecto 1" loading="eager" />
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/images/hero/Alcides(2)" alt="Proyecto 2" loading="lazy" />
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/images/hero/Alcides(3)" alt="Proyecto 3" loading="lazy" />
+        </figure>
+
+        <!-- Controles -->
+        <button class="hero-nav prev" aria-label="Anterior">‹</button>
+        <button class="hero-nav next" aria-label="Siguiente">›</button>
+
+        <!-- Puntos -->
+        <div class="hero-dots" id="hero-dots" aria-label="Paginación del slider"></div>
+      </div>
+    </div>
+  </div>
+</section>
       </div>
     </section>
 
