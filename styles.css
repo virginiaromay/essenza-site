@@ -280,3 +280,58 @@ textarea { resize: vertical }
   .menu-toggle { display: inline-block }
   .hero-overlay { height: 80vh }
 }
+/* ===== HERO full-bleed (rompe cualquier padding del contenedor padre) ===== */
+.hero-overlay{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;   /* saca el hero del padding del padre */
+  margin-right: -50vw;
+  width: 100vw;         /* ocupa todo el viewport a lo ancho */
+  height: 100vh;        /* alto pantalla completa */
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  overflow: hidden;     /* sin barras raras */
+  max-width: none !important;  /* por si algún reset limitaba */
+}
+
+/* El slider cubre todo el hero y no deja marcos */
+.hero-overlay .hero-slider{
+  position: absolute;
+  inset: 0;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.hero-overlay .hero-slide{
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity .6s ease;
+  background: transparent !important;
+}
+.hero-overlay .hero-slide.is-active{ opacity: 1; }
+.hero-overlay .hero-slide img{
+  width: 100%; height: 100%;
+  object-fit: cover; border-radius: 0 !important; display: block;
+}
+
+/* Capa oscura para legibilidad del texto */
+.hero-overlay::before{
+  content:"";
+  position:absolute; inset:0;
+  background: rgba(0,0,0,.40);
+  z-index:1;
+}
+
+/* Contenido encima */
+.hero-overlay .hero-content{
+  position: relative; z-index: 2;
+  color: #fff; text-align: center;
+  top: 50%; transform: translateY(-50%);
+  max-width: 800px; margin: 0 auto; padding: 0 20px;
+}
+
+/* En móvil, un poquito menos alto para no tapar el header */
+@media (max-width: 900px){
+  .hero-overlay{ height: 80vh; }
+}
