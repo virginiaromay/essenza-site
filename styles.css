@@ -601,3 +601,62 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
 @media (max-width: 560px){
   .process-icons{ grid-template-columns: 1fr; }
 }
+
+/* ===================== Flechas de secuencia en PROCESO ===================== */
+.process-icons .p-icon{
+  position: relative;
+}
+
+/* ----- Desktop (3 columnas): flechas hacia la derecha ----- */
+@media (min-width: 901px){
+  /* línea horizontal */
+  .process-icons .p-icon:not(:nth-child(3n)):not(:last-child)::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    right:-22px;                  /* separa la línea del borde */
+    width: 34px; height: 2px;
+    background: var(--oxford);
+    transform: translateY(-50%);
+    opacity:.85;
+  }
+  /* punta de flecha */
+  .process-icons .p-icon:not(:nth-child(3n)):not(:last-child)::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    right:-22px;
+    transform: translateY(-50%);
+    border-left: 7px solid var(--oxford);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    /* coloca la punta al final de la línea */
+    margin-left: 34px;
+  }
+}
+
+/* ----- Tablet/Móvil: flechas hacia abajo (grid 2 o 1 col) ----- */
+@media (max-width: 900px){
+  /* línea vertical */
+  .process-icons .p-icon:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    left:50%; bottom:-26px;
+    width: 2px; height: 26px;
+    background: var(--oxford);
+    transform: translateX(-50%);
+    opacity:.85;
+  }
+  /* punta de flecha */
+  .process-icons .p-icon:not(:last-child)::before{
+    content:"";
+    position:absolute;
+    left:50%; bottom:-36px;
+    transform: translateX(-50%);
+    border-top: 7px solid var(--oxford);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+  }
+  /* evita que la flecha se corte: añade espacio bajo el grid */
+  .process-icons{ row-gap: 36px; }
+}
