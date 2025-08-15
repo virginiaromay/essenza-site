@@ -27,12 +27,18 @@
 
 /* ===================== RESETS Y BASE ===================== */
 * { box-sizing: border-box }
-html, body { margin: 0; padding: 0 }
+html, body { margin: 0; padding: 0;
+  overflow-x: hidden;
+}
 body {
   font-family: 'EncodeSans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--xeketic);
-  background: var(--babypowder);
+  
   line-height: 1.65;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 h1, h2, h3 {
   font-family: 'HelveticaNowDisplay','EncodeSans',system-ui,sans-serif;
@@ -169,7 +175,7 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .hero-overlay .hero-dots {
   position: absolute;
   bottom: 20px;
-  left: 50%;
+  
   transform: translateX(-50%);
   display: flex;
   gap: 8px;
@@ -324,11 +330,16 @@ textarea { resize: vertical }
 }
 /* === Parche 1: evita el “marco” por desborde horizontal del full-bleed === */
 html, body {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  overflow-x: hidden;
 }
 body {
   overflow-x: hidden;              /* oculta el “sobresale” del truco 100vw */
+  background: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 /* === Parche 2: hero full-bleed de borde a borde, sin gris ni radios === */
@@ -355,11 +366,16 @@ body {
 }
 /* === Anti-gutter global: evita que se asome el fondo a los costados === */
 html, body {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  overflow-x: hidden;
 }
 body {
   overflow-x: hidden;                /* oculta cualquier desborde lateral */
+  background: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 /* === HERO FULL-BLEED sin marcos, de borde a borde === */
@@ -408,8 +424,13 @@ body {
 }
 
 /* === Sanity fixes === */
-html, body { margin: 0; padding: 0; }
-body { overflow-x: hidden; }
+html, body { margin: 0; padding: 0;   background: #fff;
+  overflow-x: hidden;
+}
+body { overflow-x: hidden;   background: #fff;
+  margin: 0;
+  padding: 0;
+}
 /* Ensure hero is full width without hacks */
 .hero-overlay{
   left: auto !important;
@@ -419,3 +440,34 @@ body { overflow-x: hidden; }
   width: 100% !important;
   max-width: 100% !important;
 }
+
+
+/* === HARD FIX: hero full-bleed, no horizontal overflow === */
+.hero-overlay{
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: #000 !important; /* fallback while image loads */
+  overflow: hidden !important;
+}
+.hero-overlay img{
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+/* Prevent any child from causing horizontal scroll */
+.hero-overlay *{
+  max-width: 100% !important;
+}
+
+
+/* === GLOBAL: prevent accidental horizontal overflow === */
+html, body { width: 100%; }
+* { box-sizing: border-box; }
+img, video { display: block; max-width: 100%; height: auto; }
