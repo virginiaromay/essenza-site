@@ -278,23 +278,10 @@ textarea { resize: vertical }
   }
   .menu.show { display: flex }
   .menu-toggle { display: inline-block }
-  .hero-overlay { height: 80vh }
+  
 }
 /* ===== HERO full-bleed (rompe cualquier padding del contenedor padre) ===== */
-.hero-overlay{
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;   /* saca el hero del padding del padre */
-  margin-right: -50vw;
-  width: 100vw;         /* ocupa todo el viewport a lo ancho */
-  height: 100vh;        /* alto pantalla completa */
-  padding: 0 !important;
-  background: transparent !important;
-  border-radius: 0 !important;
-  overflow: hidden;     /* sin barras raras */
-  max-width: none !important;  /* por si algún reset limitaba */
-}
+
 
 /* El slider cubre todo el hero y no deja marcos */
 .hero-overlay .hero-slider{
@@ -333,7 +320,7 @@ textarea { resize: vertical }
 
 /* En móvil, un poquito menos alto para no tapar el header */
 @media (max-width: 900px){
-  .hero-overlay{ height: 80vh; }
+  
 }
 /* === Parche 1: evita el “marco” por desborde horizontal del full-bleed === */
 html, body {
@@ -345,20 +332,7 @@ body {
 }
 
 /* === Parche 2: hero full-bleed de borde a borde, sin gris ni radios === */
-.hero-overlay{
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;              /* saca del padding del padre */
-  margin-right: -50vw;
-  width: 100vw;                    /* ocupa todo el viewport a lo ancho */
-  height: 100vh;                   /* alto pantalla completa */
-  background: transparent !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  overflow: hidden;
-  max-width: none !important;
-}
+
 
 /* slider sin fondos ni sombras, cubre todo */
 .hero-overlay .hero-slider{
@@ -389,20 +363,7 @@ body {
 }
 
 /* === HERO FULL-BLEED sin marcos, de borde a borde === */
-.hero-overlay{
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;                /* rompe el padding del contenedor padre */
-  margin-right: -50vw;
-  width: 100vw;                      /* ocupa todo el viewport */
-  height: 100vh;                     /* pantalla completa */
-  background: transparent !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  overflow: hidden;
-  max-width: none !important;
-}
+
 
 /* El slider cubre todo y no tiene fondo ni esquinas */
 .hero-overlay .hero-slider{
@@ -443,5 +404,18 @@ body {
 
 /* En móvil: un poquito menos alto para no pelear con el header */
 @media (max-width: 900px){
-  .hero-overlay{ height: 80vh; }
+  
+}
+
+/* === Sanity fixes === */
+html, body { margin: 0; padding: 0; }
+body { overflow-x: hidden; }
+/* Ensure hero is full width without hacks */
+.hero-overlay{
+  left: auto !important;
+  right: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
