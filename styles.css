@@ -498,3 +498,50 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
 @media (max-width: 900px){
   .tile { aspect-ratio: 1 / 1; }
 }
+/* ===================== BARRA FLOTANTE DE CONTACTO ===================== */
+.contact-bar{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  gap: 8px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 50px;
+  padding: 6px 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  z-index: 20;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.contact-bar a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-bar img{
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.contact-bar img:hover{
+  transform: scale(1.15);
+  filter: saturate(1.1);
+}
+
+/* en desktop: semi-oculta y aparece al pasar el mouse */
+@media (min-width: 768px){
+  .contact-bar{
+    transform: translateX(60%);
+    opacity: .65;
+  }
+  .contact-bar:hover{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
