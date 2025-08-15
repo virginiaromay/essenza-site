@@ -660,3 +660,37 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
   /* evita que la flecha se corte: añade espacio bajo el grid */
   .process-icons{ row-gap: 36px; }
 }
+
+/* ===== Centrado del PROCESO en móvil ===== */
+@media (max-width: 900px){
+  .process-icons{
+    justify-items: center;   /* centra las tarjetas en el grid */
+  }
+  .p-icon{
+    text-align: center;      /* centra títulos y párrafos */
+    align-items: center;     /* centra el contenido dentro de la tarjeta */
+    padding: 18px 16px;
+  }
+  .p-icon .pi-figure{
+    margin: 0 auto 8px auto; /* centra el círculo del icono */
+  }
+  .p-icon h3{
+    margin-top: 6px;
+  }
+  .p-icon p{
+    max-width: 36ch;         /* line length agradable en móvil */
+  }
+}
+
+/* Opcional: un poco más compacto en pantallas muy pequeñas */
+@media (max-width: 560px){
+  .p-icon{
+    padding: 16px 14px;
+  }
+  .p-icon .pi-figure{
+    width: 56px; height: 56px; /* icono apenas más compacto */
+  }
+  .p-icon p{
+    font-size: .95rem;
+  }
+}
