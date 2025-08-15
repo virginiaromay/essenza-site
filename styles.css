@@ -471,3 +471,30 @@ body { overflow-x: hidden;   background: #fff;
 html, body { width: 100%; }
 * { box-sizing: border-box; }
 img, video { display: block; max-width: 100%; height: auto; }
+
+/* === FIX: fotos sin marco, ocupando todo el bloque === */
+figure { margin: 0; }                 /* evita el margen por defecto del <figure> */
+
+.gallery { gap: 1.2rem; }             /* opcional: separaciones limpias entre fotos */
+
+/* El contenedor de cada foto */
+.tile {
+  border-radius: 0;                   /* si NO quieres esquinas redondeadas */
+  overflow: hidden;                   /* recorta excedentes de la imagen */
+  background: transparent;            /* sin fondo visible */
+  aspect-ratio: 4 / 3;                /* alto consistente; ajusta si quieres otros formatos */
+}
+
+/* La imagen ocupa todo el espacio del tile */
+.tile img {
+  display: block;                     /* elimina espacios “inline” alrededor */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                  /* llena sin dejar franjas */
+  object-position: center;
+}
+
+/* En móvil, cuadradas para verse mejor en 2 columnas (opcional) */
+@media (max-width: 900px){
+  .tile { aspect-ratio: 1 / 1; }
+}
