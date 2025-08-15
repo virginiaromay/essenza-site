@@ -34,8 +34,7 @@ body {
   font-family: 'EncodeSans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--xeketic);
   
-  line-height: 1.65;
-  background: #fff;
+  line-background: #fff;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -67,7 +66,7 @@ h3 { font-weight: 300; font-size: 1.1rem }
   gap: 1rem;
   padding: .7rem 0;
 }
-.logo { height: 34px; display: block }
+.logo { display: block }
 .logo-link { display: inline-flex; align-items: center }
 .menu { display: flex; gap: 1rem; align-items: center }
 .menu a { color: var(--xeketic); text-decoration: none; font-size: .98rem }
@@ -85,9 +84,11 @@ h3 { font-weight: 300; font-size: 1.1rem }
 
 /* ===================== HERO OVERLAY ===================== */
 .hero-overlay {
+  min-height: 100vh !important;
+min-height: 100svh !important;
+height: 100dvh !important;
   position: relative;
   width: 100%;
-  height: 100vh;
   overflow: hidden;
   padding: 0 !important;
   margin: 0 !important;
@@ -111,7 +112,6 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .hero-overlay .hero-slide.is-active { opacity: 1 }
 .hero-overlay .hero-slide img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   border-radius: 0 !important;
   display: block;
@@ -166,7 +166,6 @@ h3 { font-weight: 300; font-size: 1.1rem }
   border: none;
   border-radius: 50%;
   width: 40px;
-  height: 40px;
   cursor: pointer;
   z-index: 3;
 }
@@ -183,7 +182,6 @@ h3 { font-weight: 300; font-size: 1.1rem }
 }
 .hero-overlay .hero-dots button {
   width: 10px;
-  height: 10px;
   border-radius: 50%;
   border: none;
   background: rgba(255,255,255,.6);
@@ -251,7 +249,6 @@ textarea { resize: vertical }
   right: 18px;
   bottom: 18px;
   width: 56px;
-  height: 56px;
   display: inline-grid;
   place-items: center;
   background: #25D366;
@@ -259,7 +256,7 @@ textarea { resize: vertical }
   box-shadow: 0 8px 20px rgba(0,0,0,.15);
   z-index: 20;
 }
-.whatsapp svg { width: 28px; height: 28px; fill: #fff }
+.whatsapp svg { width: 28px; fill: #fff }
 .whatsapp:focus {
   outline: 3px solid rgba(1,41,81,.35);
   outline-offset: 2px;
@@ -304,8 +301,7 @@ textarea { resize: vertical }
 }
 .hero-overlay .hero-slide.is-active{ opacity: 1; }
 .hero-overlay .hero-slide img{
-  width: 100%; height: 100%;
-  object-fit: cover; border-radius: 0 !important; display: block;
+  width: 100%; object-fit: cover; border-radius: 0 !important; display: block;
 }
 
 /* Capa oscura para legibilidad del texto */
@@ -359,8 +355,7 @@ body {
 }
 .hero-overlay .hero-slide.is-active{ opacity: 1; }
 .hero-overlay .hero-slide img{
-  width: 100%; height: 100%;
-  object-fit: cover;
+  width: 100%; object-fit: cover;
   border-radius: 0 !important;
   display: block;
 }
@@ -395,8 +390,7 @@ body {
 }
 .hero-overlay .hero-slide.is-active{ opacity: 1; }
 .hero-overlay .hero-slide img{
-  width: 100%; height: 100%;
-  object-fit: cover;
+  width: 100%; object-fit: cover;
   border-radius: 0 !important;
   display: block;
 }
@@ -433,6 +427,9 @@ body { overflow-x: hidden;   background: #fff;
 }
 /* Ensure hero is full width without hacks */
 .hero-overlay{
+  min-height: 100vh !important;
+min-height: 100svh !important;
+height: 100dvh !important;
   left: auto !important;
   right: auto !important;
   margin-left: 0 !important;
@@ -444,20 +441,21 @@ body { overflow-x: hidden;   background: #fff;
 
 /* === HARD FIX: hero full-bleed, no horizontal overflow === */
 .hero-overlay{
+  min-height: 100vh !important;
+min-height: 100svh !important;
+height: 100dvh !important;
   position: relative !important;
   width: 100% !important;
   max-width: 100% !important;
-  height: 100vh !important;
   margin: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  background: #000 !important; /* fallback while image loads */
+  background: #fff !important /* fallback while image loads */
   overflow: hidden !important;
 }
 .hero-overlay img{
   display: block !important;
   width: 100% !important;
-  height: 100% !important;
   object-fit: cover !important;
   object-position: center center !important;
 }
@@ -470,4 +468,4 @@ body { overflow-x: hidden;   background: #fff;
 /* === GLOBAL: prevent accidental horizontal overflow === */
 html, body { width: 100%; }
 * { box-sizing: border-box; }
-img, video { display: block; max-width: 100%; height: auto; }
+img, video { display: block; max-width: 100%; }
