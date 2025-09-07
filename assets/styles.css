@@ -1,0 +1,696 @@
+/* ===================== TIPOGRAFÍAS ===================== */
+@font-face {
+  font-family: 'HelveticaNowDisplay';
+  src: url('assets/fonts/HelveticaNowDisplay-ExtLt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EncodeSans';
+  src: url('assets/fonts/EncodeSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===================== PALETA Y TOKENS ===================== */
+:root {
+  --oxford: #012951;
+  --babypowder: #FBF9F6;
+  --palesilver: #D4C5C7;
+  --xeketic: #190E1A;
+  --rhythm: #666A86;
+  --azure: #EBFDFF;
+  --radius: 14px;
+}
+
+/* ===================== RESETS Y BASE ===================== */
+* { box-sizing: border-box }
+html, body { margin: 0; padding: 0;
+  overflow-x: hidden;
+}
+body {
+  font-family: 'EncodeSans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--xeketic);
+  
+  line-height: 1.65;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+h1, h2, h3 {
+  font-family: 'HelveticaNowDisplay','EncodeSans',system-ui,sans-serif;
+  letter-spacing: .2px;
+  color: var(--xeketic);
+  margin: 0 0 .5rem;
+}
+h1 { font-weight: 300; font-size: clamp(2rem, 4vw, 3.2rem) }
+h2 { font-weight: 300; font-size: clamp(1.4rem, 2.4vw, 2rem) }
+h3 { font-weight: 300; font-size: 1.1rem }
+.container { width: min(1100px, 92%); margin-inline: auto }
+
+/* ===================== ENCABEZADO ===================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(251,249,246,.9);
+  backdrop-filter: saturate(1.2) blur(8px);
+  border-bottom: 1px solid #e9e7e3;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .7rem 0;
+}
+.logo { height: 34px; display: block }
+.logo-link { display: inline-flex; align-items: center }
+.menu { display: flex; gap: 1rem; align-items: center }
+.menu a { color: var(--xeketic); text-decoration: none; font-size: .98rem }
+.btn {
+  display: inline-block;
+  padding: .7rem 1rem;
+  border-radius: 999px;
+  background: var(--oxford);
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid var(--oxford);
+}
+.btn-small { padding: .45rem .8rem; font-size: .9rem; color: #fff !important }
+.menu-toggle { display: none; background: none; border: 0; font-size: 1.4rem }
+
+/* ===================== HERO OVERLAY ===================== */
+.hero-overlay {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  max-width: 100% !important;
+}
+.hero-overlay .hero-slider {
+  position: absolute;
+  inset: 0;
+  background: transparent !important;
+  border-radius: 0;
+  box-shadow: none;
+}
+.hero-overlay .hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .6s ease;
+  background: transparent !important;
+}
+.hero-overlay .hero-slide.is-active { opacity: 1 }
+.hero-overlay .hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+  display: block;
+}
+
+/* Sombra para legibilidad */
+.hero-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.40);
+  z-index: 1;
+}
+
+/* Contenido sobre la imagen */
+.hero-overlay .hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.hero-overlay .hero-content h1 {
+  font-size: clamp(2.2rem, 6vw, 4.4rem);
+  color: #fff;
+}
+.hero-overlay .hero-content .lede {
+  max-width: 60ch;
+  margin-inline: auto;
+  color: #fff;
+}
+.hero-overlay .hero-content .btn {
+  color: #fff;
+  border: 1px solid #fff;
+  background: rgba(255,255,255,.15);
+}
+.hero-overlay .hero-content .btn:hover {
+  background: rgba(255,255,255,.3);
+}
+
+/* Controles y puntos */
+.hero-overlay .hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 3;
+}
+.hero-overlay .hero-nav.prev { left: 20px }
+.hero-overlay .hero-nav.next { right: 20px }
+.hero-overlay .hero-dots {
+  position: absolute;
+  bottom: 20px;
+  
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+.hero-overlay .hero-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,.6);
+  cursor: pointer;
+}
+.hero-overlay .hero-dots button.is-active { background: #fff }
+
+/* ===================== SECCIONES GENERALES ===================== */
+.section { padding: 3.5rem 0 }
+.section-alt { background: var(--azure) }
+
+/* ===================== QUIÉNES SOMOS ===================== */
+.split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2rem }
+.pillars { list-style: none; padding: 0; margin: 0; display: grid; gap: .6rem }
+.pillars li { padding: .75rem 1rem; border: 1px solid #e6e2de; border-radius: var(--radius); background: #fff }
+
+/* ===================== SERVICIOS ===================== */
+.grid { display: grid; gap: 1.2rem }
+.cards { grid-template-columns: repeat(3, 1fr) }
+.card { padding: 1.1rem; border: 1px solid #e6e2de; border-radius: var(--radius); background: #fff }
+.card h3 { margin: .2rem 0 .4rem }
+
+/* ===================== PROYECTOS ===================== */
+.filters { display: flex; gap: .6rem; margin-bottom: 1rem; flex-wrap: wrap }
+.chip { border: 1px solid #d9d5d1; background: #fff; padding: .45rem .8rem; border-radius: 999px; font: inherit; cursor: pointer }
+.chip.active { background: var(--oxford); color: #fff; border-color: var(--oxford) }
+.gallery { grid-template-columns: repeat(3, 1fr) }
+.tile { border-radius: var(--radius); overflow: hidden; transition: opacity .25s ease, transform .25s ease }
+.tile[hidden] { display: none }
+
+/* ===================== PROCESO ===================== */
+.steps { display: grid; gap: .6rem; counter-reset: step }
+.steps li { background: #fff; border: 1px solid #e6e2de; border-radius: var(--radius); padding: .9rem 1rem }
+
+/* ===================== CONTACTO ===================== */
+.contact-section h2,
+.contact-section p,
+.contact-section label { color: #fff }
+.contact-section { background: var(--oxford) }
+.contact { margin-top: .6rem }
+.form-grid { grid-template-columns: repeat(2, 1fr) }
+label { display: grid; gap: .4rem; font-size: .92rem }
+input, textarea {
+  padding: .7rem .8rem;
+  border: 1px solid #d9d5d1;
+  border-radius: 12px;
+  font: inherit;
+  background: #fff;
+}
+textarea { resize: vertical }
+
+/* ===================== PIE DE PÁGINA ===================== */
+.site-footer { border-top: 1px solid #e6e2de; background: #fff }
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+.back-to-top { text-decoration: none; font-weight: 600; color: var(--oxford) }
+
+/* ===================== WHATSAPP ===================== */
+.whatsapp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 56px;
+  height: 56px;
+  display: inline-grid;
+  place-items: center;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  z-index: 20;
+}
+.whatsapp svg { width: 28px; height: 28px; fill: #fff }
+.whatsapp:focus {
+  outline: 3px solid rgba(1,41,81,.35);
+  outline-offset: 2px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .cards { grid-template-columns: 1fr }
+  .gallery { grid-template-columns: 1fr 1fr }
+  .split { grid-template-columns: 1fr }
+  .form-grid { grid-template-columns: 1fr }
+  .menu {
+    display: none;
+    position: absolute;
+    right: 4%;
+    top: 58px;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e6e2de;
+    padding: .6rem;
+    border-radius: 12px;
+  }
+  .menu.show { display: flex }
+  .menu-toggle { display: inline-block }
+  
+}
+/* ===== HERO full-bleed (rompe cualquier padding del contenedor padre) ===== */
+
+
+/* El slider cubre todo el hero y no deja marcos */
+.hero-overlay .hero-slider{
+  position: absolute;
+  inset: 0;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.hero-overlay .hero-slide{
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity .6s ease;
+  background: transparent !important;
+}
+.hero-overlay .hero-slide.is-active{ opacity: 1; }
+.hero-overlay .hero-slide img{
+  width: 100%; height: 100%;
+  object-fit: cover; border-radius: 0 !important; display: block;
+}
+
+/* Capa oscura para legibilidad del texto */
+.hero-overlay::before{
+  content:"";
+  position:absolute; inset:0;
+  background: rgba(0,0,0,.40);
+  z-index:1;
+}
+
+/* Contenido encima */
+.hero-overlay .hero-content{
+  position: relative; z-index: 2;
+  color: #fff; text-align: center;
+  top: 50%; transform: translateY(-50%);
+  max-width: 800px; margin: 0 auto; padding: 0 20px;
+}
+
+/* En móvil, un poquito menos alto para no tapar el header */
+@media (max-width: 900px){
+  
+}
+/* === Parche 1: evita el “marco” por desborde horizontal del full-bleed === */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;              /* oculta el “sobresale” del truco 100vw */
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Parche 2: hero full-bleed de borde a borde, sin gris ni radios === */
+
+
+/* slider sin fondos ni sombras, cubre todo */
+.hero-overlay .hero-slider{
+  position: absolute; inset: 0;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.hero-overlay .hero-slide{
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity .6s ease;
+  background: transparent !important;   /* por si quedó algún color heredado */
+}
+.hero-overlay .hero-slide.is-active{ opacity: 1; }
+.hero-overlay .hero-slide img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+  display: block;
+}
+/* === Anti-gutter global: evita que se asome el fondo a los costados === */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;                /* oculta cualquier desborde lateral */
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* === HERO FULL-BLEED sin marcos, de borde a borde === */
+
+
+/* El slider cubre todo y no tiene fondo ni esquinas */
+.hero-overlay .hero-slider{
+  position: absolute; inset: 0;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.hero-overlay .hero-slide{
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity .6s ease;
+  background: transparent !important;
+}
+.hero-overlay .hero-slide.is-active{ opacity: 1; }
+.hero-overlay .hero-slide img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+  display: block;
+}
+
+/* Capa oscura para legibilidad del texto (ajusta opacidad a gusto) */
+.hero-overlay::before{
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.40);
+  z-index: 1;
+}
+
+/* Contenido encima */
+.hero-overlay .hero-content{
+  position: relative; z-index: 2;
+  color: #fff;
+  text-align: center;
+  top: 50%; transform: translateY(-50%);
+  max-width: 800px; margin: 0 auto; padding: 0 20px;
+}
+
+/* En móvil: un poquito menos alto para no pelear con el header */
+@media (max-width: 900px){
+  
+}
+
+/* === Sanity fixes === */
+html, body { margin: 0; padding: 0;   background: #fff;
+  overflow-x: hidden;
+}
+body { overflow-x: hidden;   background: #fff;
+  margin: 0;
+  padding: 0;
+}
+/* Ensure hero is full width without hacks */
+.hero-overlay{
+  left: auto !important;
+  right: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+
+/* === HARD FIX: hero full-bleed, no horizontal overflow === */
+.hero-overlay{
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: #000 !important; /* fallback while image loads */
+  overflow: hidden !important;
+}
+.hero-overlay img{
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+/* Prevent any child from causing horizontal scroll */
+.hero-overlay *{
+  max-width: 100% !important;
+}
+
+
+/* === GLOBAL: prevent accidental horizontal overflow === */
+html, body { width: 100%; }
+* { box-sizing: border-box; }
+img, video { display: block; max-width: 100%; height: auto; }
+
+/* === FIX: fotos sin marco, ocupando todo el bloque === */
+figure { margin: 0; }                 /* evita el margen por defecto del <figure> */
+
+.gallery { gap: 1.2rem; }             /* opcional: separaciones limpias entre fotos */
+
+/* El contenedor de cada foto */
+.tile {
+  border-radius: 0;                   /* si NO quieres esquinas redondeadas */
+  overflow: hidden;                   /* recorta excedentes de la imagen */
+  background: transparent;            /* sin fondo visible */
+  aspect-ratio: 4 / 3;                /* alto consistente; ajusta si quieres otros formatos */
+}
+
+/* La imagen ocupa todo el espacio del tile */
+.tile img {
+  display: block;                     /* elimina espacios “inline” alrededor */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                  /* llena sin dejar franjas */
+  object-position: center;
+}
+
+/* En móvil, cuadradas para verse mejor en 2 columnas (opcional) */
+@media (max-width: 900px){
+  .tile { aspect-ratio: 1 / 1; }
+}
+/* ===================== BARRA FLOTANTE DE CONTACTO ===================== */
+.contact-bar{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  gap: 8px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 50px;
+  padding: 6px 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  z-index: 20;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.contact-bar a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-bar img{
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.contact-bar img:hover{
+  transform: scale(1.15);
+  filter: saturate(1.1);
+}
+
+/* en desktop: semi-oculta y aparece al pasar el mouse */
+@media (min-width: 768px){
+  .contact-bar{
+    transform: translateX(60%);
+    opacity: .65;
+  }
+  .contact-bar:hover{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ===================== PROCESO (iconos tipo DG-LA) ===================== */
+.process-icons{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.p-icon{
+  background:#fff;
+  border:1px solid #e6e2de;
+  border-radius:14px;
+  padding:20px 18px;
+  display:grid;
+  align-content:start;
+  gap:10px;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.p-icon:hover{
+  border-color: var(--oxford);
+  box-shadow: 0 8px 24px rgba(1,41,81,.08);
+  transform: translateY(-2px);
+}
+
+/* círculo del icono */
+.pi-figure{
+  width:60px; height:60px;
+  border-radius:50%;
+  display:grid; place-items:center;
+  background: rgba(1,41,81,.06);         /* suave */
+  color: var(--oxford);                   /* icono en oxford */
+}
+
+/* títulos + textos */
+.p-icon h3{
+  margin:6px 0 0;
+  font-weight:300;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--xeketic);
+}
+.p-icon p{
+  margin:0;
+  color:#555;
+  font-size:.95rem;
+  line-height:1.5;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .process-icons{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px){
+  .process-icons{ grid-template-columns: 1fr; }
+}
+
+/* ===================== Flechas de secuencia en PROCESO ===================== */
+.process-icons .p-icon{
+  position: relative;
+}
+
+/* ----- Desktop (3 columnas): flechas hacia la derecha ----- */
+@media (min-width: 901px){
+  /* línea horizontal */
+  .process-icons .p-icon:not(:nth-child(3n)):not(:last-child)::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    right:-22px;                  /* separa la línea del borde */
+    width: 34px; height: 2px;
+    background: var(--oxford);
+    transform: translateY(-50%);
+    opacity:.85;
+  }
+  /* punta de flecha */
+  .process-icons .p-icon:not(:nth-child(3n)):not(:last-child)::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    right:-22px;
+    transform: translateY(-50%);
+    border-left: 7px solid var(--oxford);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    /* coloca la punta al final de la línea */
+    margin-left: 34px;
+  }
+}
+
+/* ----- Tablet/Móvil: flechas hacia abajo (grid 2 o 1 col) ----- */
+@media (max-width: 900px){
+  /* línea vertical */
+  .process-icons .p-icon:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    left:50%; bottom:-26px;
+    width: 2px; height: 26px;
+    background: var(--oxford);
+    transform: translateX(-50%);
+    opacity:.85;
+  }
+  /* punta de flecha */
+  .process-icons .p-icon:not(:last-child)::before{
+    content:"";
+    position:absolute;
+    left:50%; bottom:-36px;
+    transform: translateX(-50%);
+    border-top: 7px solid var(--oxford);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+  }
+  /* evita que la flecha se corte: añade espacio bajo el grid */
+  .process-icons{ row-gap: 36px; }
+}
+
+/* ===== Centrado del PROCESO en móvil ===== */
+@media (max-width: 900px){
+  .process-icons{
+    justify-items: center;   /* centra las tarjetas en el grid */
+  }
+  .p-icon{
+    text-align: center;      /* centra títulos y párrafos */
+    align-items: center;     /* centra el contenido dentro de la tarjeta */
+    padding: 18px 16px;
+  }
+  .p-icon .pi-figure{
+    margin: 0 auto 8px auto; /* centra el círculo del icono */
+  }
+  .p-icon h3{
+    margin-top: 6px;
+  }
+  .p-icon p{
+    max-width: 36ch;         /* line length agradable en móvil */
+  }
+}
+
+/* Opcional: un poco más compacto en pantallas muy pequeñas */
+@media (max-width: 560px){
+  .p-icon{
+    padding: 16px 14px;
+  }
+  .p-icon .pi-figure{
+    width: 56px; height: 56px; /* icono apenas más compacto */
+  }
+  .p-icon p{
+    font-size: .95rem;
+  }
+}
