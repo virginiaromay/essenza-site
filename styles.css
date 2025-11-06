@@ -795,4 +795,51 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
 .gallery .tile{ aspect-ratio: 16 / 10; }
 .gallery .tile img{ height:100%; object-fit:cover; }
 
+/* ===== Proyectos · Fade Luxe (efecto Essenza) ===== */
+.gallery .tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  aspect-ratio: 16 / 10;
+}
+
+.gallery .tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+.gallery .tile .caption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.gallery .tile .caption span {
+  color: #fff;
+  font-family: 'Helvetica Now Display', 'Encode Sans', system-ui, sans-serif;
+  font-weight: 200;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.gallery .tile:hover .caption {
+  opacity: 1;
+}
+
+.gallery .tile:hover .caption span {
+  opacity: 1;
+  transform: translateY(0);
+}
 
