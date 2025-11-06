@@ -750,3 +750,7 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
 @media (prefers-reduced-motion: reduce){
   .tile img, .tile .caption{ transition: none }
 }
+/* FIX: quita el espacio bajo la imagen en hover */
+figure.tile { margin: 0; }                 /* resetea margen por defecto del figure */
+.tile .project-link { display:block; line-height:0; position:relative; }
+.tile img { display:block; }               /* elimina el baseline gap */
