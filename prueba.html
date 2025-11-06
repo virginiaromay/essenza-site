@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hover Variantes · Essenza</title>
+  <style>
+    body {
+      font-family: 'Helvetica Now Display', 'Encode Sans', system-ui, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 3rem;
+      color: #333;
+    }
+    h2 { font-weight: 400; margin-bottom: 1rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      aspect-ratio: 16/10;
+    }
+    .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .caption {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== 1. Minimal Soft ===== */
+    .minimal .caption {
+      background: rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .minimal:hover .caption { opacity: 1; }
+    .minimal .caption span {
+      font-weight: 300;
+      transform: translateY(5px);
+      transition: transform 0.5s ease;
+    }
+    .minimal:hover .caption span { transform: translateY(0); }
+
+    /* ===== 2. Focus Zoom ===== */
+    .zoom img {
+      transition: transform 0.6s ease, opacity 0.4s ease;
+    }
+    .zoom:hover img {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+    .zoom .caption {
+      background: rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .zoom:hover .caption { opacity: 1; }
+
+    /* ===== 3. Fade Luxe ===== */
+    .fade .caption {
+      background: rgba(0, 0, 0, 0.55);
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+    .fade:hover .caption { opacity: 1; }
+    .fade .caption span {
+      font-weight: 200;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    }
+    .fade:hover .caption span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <h1>Comparativa de efectos hover · Essenza</h1>
+  <div class="grid">
+    <div class="tile minimal">
+      <img src="proyectos/alcides/cover.jpg" alt="Minimal Soft">
+      <div class="caption"><span>Minimal Soft</span></div>
+    </div>
+    <div class="tile zoom">
+      <img src="proyectos/felix/cover.jpg" alt="Focus Zoom">
+      <div class="caption"><span>Focus Zoom</span></div>
+    </div>
+    <div class="tile fade">
+      <img src="proyectos/el-bosque/cover.jpg" alt="Fade Luxe">
+      <div class="caption"><span>Fade Luxe</span></div>
+    </div>
+  </div>
+</body>
+</html>
