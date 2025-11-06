@@ -694,3 +694,59 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
     font-size: .95rem;
   }
 }
+
+/* ===== Proyectos: overlay + texto al hacer hover ===== */
+.tile{
+  position: relative;                 /* necesario para posicionar overlay */
+  border-radius: 14px;                /* puedes usar var(--radius) si prefieres */
+  overflow: hidden;
+  isolation: isolate;                 /* asegura mezcla correcta de capas */
+}
+
+.tile .project-link{ display: block; line-height: 0 } /* elimina gaps raros */
+
+.tile img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease, opacity .35s ease;
+  will-change: transform;
+}
+
+/* Capa oscura + centrado del título */
+.tile .caption{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  background: rgba(0,0,0,.42);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.tile .caption span{
+  color: #fff;
+  font-family: 'HelveticaNowDisplay','EncodeSans',system-ui,sans-serif;
+  font-weight: 300;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  text-align: center;
+}
+
+/* Interacción */
+.tile:hover img{ transform: scale(1.05); opacity: .96; }
+.tile:hover .caption{ opacity: 1; transform: translateY(0); }
+
+/* Accesible con teclado */
+.tile .project-link:focus-visible .caption{
+  opacity: 1; transform: none;
+  outline: 2px solid #fff; outline-offset: -6px;
+}
+
+/* Respeta usuarios con “reducir movimiento” */
+@media (prefers-reduced-motion: reduce){
+  .tile img, .tile .caption{ transition: none }
+}
