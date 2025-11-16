@@ -94,4 +94,30 @@ chips.forEach(chip=>{
   startAutoplay();
 })();
 
+// ===================== SERVICIOS · ACORDEÓN =====================
+const services = document.querySelectorAll('.service');
+
+if (services.length) {
+  services.forEach(service => {
+    const header = service.querySelector('.service-header');
+    if (!header) return;
+
+    header.addEventListener('click', () => {
+      const isOpen = service.classList.contains('is-open');
+
+      // Cerrar todos
+      services.forEach(s => {
+        s.classList.remove('is-open');
+        const btn = s.querySelector('.service-header');
+        btn?.setAttribute('aria-expanded', 'false');
+      });
+
+      // Abrir solo el que se clicó (si antes estaba cerrado)
+      if (!isOpen) {
+        service.classList.add('is-open');
+        header.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
 
