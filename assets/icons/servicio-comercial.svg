@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g fill="none" stroke="#000" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <!-- volumen principal -->
+    <rect x="10" y="22" width="44" height="30" rx="2" ry="2"/>
+    <!-- marquesina -->
+    <rect x="10" y="16" width="44" height="6"/>
+    <path d="M14 22c0 3 2 5 4 5s4-2 4-5M26 22c0 3 2 5 4 5s4-2 4-5M38 22c0 3 2 5 4 5s4-2 4-5M50 22c0 3 2 5 4 5s4-2 4-5"/>
+    <!-- vitrina y puerta -->
+    <rect x="16" y="30" width="16" height="12" rx="1.5" ry="1.5"/>
+    <rect x="38" y="30" width="8" height="22" rx="1.5" ry="1.5"/>
+  </g>
+</svg>
