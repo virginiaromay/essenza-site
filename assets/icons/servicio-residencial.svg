@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g fill="none" stroke="#000" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <!-- casa -->
+    <path d="M8 28L32 10l24 18v24a2.5 2.5 0 0 1-2.5 2.5h-43A2.5 2.5 0 0 1 8 52z"/>
+    <!-- sofá -->
+    <rect x="18" y="32" width="28" height="12" rx="3" ry="3"/>
+    <rect x="18" y="34" width="6" height="8" rx="2" ry="2"/>
+    <rect x="40" y="34" width="6" height="8" rx="2" ry="2"/>
+    <line x1="21" y1="44" x2="21" y2="47"/>
+    <line x1="43" y1="44" x2="43" y2="47"/>
+  </g>
+</svg>
