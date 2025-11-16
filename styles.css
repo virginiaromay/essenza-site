@@ -206,6 +206,103 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .card { padding: 1.1rem; border: 1px solid #e6e2de; border-radius: var(--radius); background: #fff }
 .card h3 { margin: .2rem 0 .4rem }
 
+/* ===================== SERVICIOS (acordeón) ===================== */
+.services-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 1.2rem;
+  margin-top: 1.4rem;
+}
+
+.service{
+  border-radius: var(--radius);
+  border: 1px solid #e6e2de;
+  background: #fff;
+  overflow: hidden;
+  transition: box-shadow .25s ease, border-color .25s ease, transform .15s ease;
+}
+
+.service.is-open{
+  border-color: var(--oxford);
+  box-shadow: 0 10px 26px rgba(1,41,81,.08);
+  transform: translateY(-1px);
+}
+
+.service-header{
+  width: 100%;
+  padding: 1rem 1rem 0.9rem;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.service-header h3{
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+.service-tagline{
+  margin: 0;
+  font-size: .9rem;
+  color: #666;
+}
+
+.service-icon{
+  font-size: 1.4rem;
+  line-height: 1;
+  transform-origin: center;
+  transition: transform .2s ease;
+}
+
+.service.is-open .service-icon{
+  transform: rotate(45deg); /* el + se transforma en x */
+}
+
+.service-body{
+  padding: 0 1rem 0.4rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .35s ease, opacity .3s ease, padding-top .25s ease, padding-bottom .25s ease;
+}
+
+.service.is-open .service-body{
+  padding-top: 0.4rem;
+  padding-bottom: 1rem;
+  max-height: 600px; /* suficiente para el contenido */
+  opacity: 1;
+}
+
+.service-body p{
+  margin-top: 0.4rem;
+  margin-bottom: 0.6rem;
+  font-size: .95rem;
+}
+
+.service-body ul{
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: .9rem;
+  color: #555;
+}
+
+.service-body li + li{
+  margin-top: 0.25rem;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .services-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* ===================== PROYECTOS ===================== */
 .filters { display: flex; gap: .6rem; margin-bottom: 1rem; flex-wrap: wrap }
 .chip { border: 1px solid #d9d5d1; background: #fff; padding: .45rem .8rem; border-radius: 999px; font: inherit; cursor: pointer }
