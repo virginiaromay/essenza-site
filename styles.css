@@ -1087,3 +1087,17 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
 .service-card:hover .service-icon img[src*="comercial"] {
   transform: translateX(-6px) scale(1.06);
 }
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #c9bda8;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  color: var(--camel);
+  transform: translateY(-3px);
+}
