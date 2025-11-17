@@ -284,6 +284,17 @@ h3 { font-weight: 300; font-size: 1.1rem }
   }
 }
 
+/* Centrar la segunda fila de servicios (cuando son 5) en desktop */
+@media (min-width: 901px) {
+  .services-grid .service-card:nth-child(4) {
+    grid-column: 2; /* pasa el 4º a la columna del centro */
+  }
+
+  .services-grid .service-card:nth-child(5) {
+    grid-column: 3; /* pasa el 5º a la columna de la derecha */
+  }
+}
+
 
 /* ===================== PROYECTOS ===================== */
 .filters { display: flex; gap: .6rem; margin-bottom: 1rem; flex-wrap: wrap }
