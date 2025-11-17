@@ -324,6 +324,47 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .tile { border-radius: var(--radius); overflow: hidden; transition: opacity .25s ease, transform .25s ease }
 .tile[hidden] { display: none }
 
+/* Hover suave estilo “Servicios” aplicado a Proyectos */
+.tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  transition:
+    box-shadow 0.35s ease,
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background-color 0.35s ease;
+}
+
+/* Capa de fade-in */
+.tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 41, 81, 0.06); /* azul oxford MUY suave */
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+
+/* Contenido por encima de la capa */
+.tile > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover */
+.tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(1, 41, 81, 0.10);
+  background-color: #f3faff; /* azul claro suave, tipo tu hover actual */
+}
+
+.tile:hover::before {
+  opacity: 1;
+}
+
+
 /* ===================== PROCESO ===================== */
 .steps { display: grid; gap: .6rem; counter-reset: step }
 .steps li { background: #fff; border: 1px solid #e6e2de; border-radius: var(--radius); padding: .9rem 1rem }
