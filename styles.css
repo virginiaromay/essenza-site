@@ -202,11 +202,11 @@ h3 { font-weight: 300; font-size: 1.1rem }
 
 /* ===================== SERVICIOS ===================== */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.6rem;
   margin-top: 1.6rem;
-  justify-items: center; /* centra las tarjetas sueltas */
+  justify-content: center; /* centra todas las filas */
 }
 
 .service-card {
@@ -214,14 +214,15 @@ h3 { font-weight: 300; font-size: 1.1rem }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.6rem 1.8rem;  /* MÁS padding */
+  padding: 1.6rem 1.8rem;
   border-radius: var(--radius);
   border: 1px solid #e6e2de;
   background: #fff;
   text-decoration: none;
-  width: 100%;
   color: inherit;
 
+  flex: 1 1 280px;      /* tamaño base */
+  max-width: 360px;     /* no se estiran demasiado */
   transition:
     box-shadow 0.35s ease,
     border-color 0.35s ease,
@@ -229,12 +230,6 @@ h3 { font-weight: 300; font-size: 1.1rem }
     background-color 0.35s ease;
 }
 
-.service-card:hover {
-  border-color: var(--oxford);
-  background-color: #faf9f7;
-  box-shadow: 0 10px 24px rgba(1, 41, 81, 0.06);
-  transform: translateY(-3px); /* hover suave */
-}
 
 /* TÍTULO MÁS NEGRITA Y NOTORIO */
 .service-text h3 {
@@ -264,35 +259,6 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .service-card:hover .service-icon img {
   transform: scale(1.06);
   opacity: 0.95;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center; /* centra la última fila */
-  }
-}
-
-@media (max-width: 600px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-card {
-    align-items: flex-start;
-  }
-}
-
-/* Centrar la segunda fila de servicios (cuando son 5) en desktop */
-@media (min-width: 901px) {
-  .services-grid .service-card:nth-child(4) {
-    grid-column: 2; /* pasa el 4º a la columna del centro */
-  }
-
-  .services-grid .service-card:nth-child(5) {
-    grid-column: 3; /* pasa el 5º a la columna de la derecha */
-  }
 }
 
 
