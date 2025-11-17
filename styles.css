@@ -611,7 +611,9 @@ h3 { font-weight: 300; font-size: 1.1rem }
     text-align: center;
   }
 }
-
+.footer-social img {
+  filter: invert(1);
+}
 /* ===================== WHATSAPP ===================== */
 .whatsapp {
   position: fixed;
