@@ -694,3 +694,12 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
     font-size: .95rem;
   }
 }
+
+/* Ajuste fino SOLO para el icono de “Comercial” */
+.service-card img[src*="comercial"] {
+  transform: translateY(-4px);
+}
+
+.service-card:hover img[src*="comercial"] {
+  transform: translateY(-4px) scale(1.06);
+}
