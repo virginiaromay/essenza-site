@@ -1180,3 +1180,32 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
   color: var(--camel);
   transform: translateY(-3px);
 }
+
+/* Botón lateral "Ir arriba" */
+.scroll-up {
+  position: fixed;
+  right: 1.6rem;
+  bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  color: #d6ccbe;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  z-index: 60;
+  transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.scroll-up-arrow {
+  font-size: 1.1rem;
+}
+
+.scroll-up:hover {
+  color: #f5f2ec;
+  transform: translateY(-4px);
+}
