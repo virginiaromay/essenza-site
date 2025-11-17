@@ -452,14 +452,132 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .steps li { background: #fff; border: 1px solid #e6e2de; border-radius: var(--radius); padding: .9rem 1rem }
 
 /* ===================== PIE DE PÁGINA ===================== */
-.site-footer { border-top: 1px solid #e6e2de; background: #fff }
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 0;
+
+.site-footer {
+  background: var(--oxford);
+  color: #f5f2ec;
+  padding: 3rem 0 2.4rem;
+  margin-top: 4rem;
 }
-.back-to-top { text-decoration: none; font-weight: 600; color: var(--oxford) }
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-col {
+  flex: 1 1 220px;
+  max-width: 320px;
+}
+
+/* Logo en el footer */
+.footer-logo {
+  height: 40px;
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+/* Tipos de texto */
+
+.footer-brand {
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-text {
+  margin: 0 0 0.7rem;
+  line-height: 1.5;
+  color: #f5f2ec;
+}
+
+.footer-label {
+  margin: 0 0 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.footer-tag {
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #d6ccbe;
+}
+
+/* Links */
+
+.footer-link {
+  color: #f5f2ec;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.footer-link:hover {
+  color: #f3e3c8;
+  border-color: #f3e3c8;
+}
+
+/* Redes */
+
+.footer-socials {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.footer-social img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  filter: invert(1); /* si tus íconos son negros, los vuelve blancos */
+  opacity: 0.9;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.footer-social:hover img {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* Copy + flecha */
+
+.footer-copy {
+  margin: 2.2rem 0 0;
+  text-align: left;
+  font-size: 0.8rem;
+  color: #d6ccbe;
+}
+
+/* Flecha volver arriba */
+.back-to-top {
+  display: inline-block;
+  margin-top: 0.6rem;
+  color: #d6ccbe;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  color: #f5f2ec;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 720px) {
+  .footer-grid {
+    gap: 1.8rem;
+  }
+}
+
 
 /* ===================== WHATSAPP ===================== */
 .whatsapp {
