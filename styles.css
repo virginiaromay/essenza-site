@@ -556,6 +556,18 @@ h3 { font-weight: 300; font-size: 1.1rem }
   color: #d6ccbe;
 }
 
+.footer-link {
+  color: #f5f2ec !important;    /* blanco-crema */
+  text-decoration: none !important;
+  border-bottom: none !important; 
+  transition: opacity .25s ease;
+}
+
+.footer-link:hover {
+  opacity: .8;
+}
+
+
 /* Flecha */
 .scroll-up {
   position: fixed;
