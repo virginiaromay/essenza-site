@@ -567,6 +567,15 @@ h3 { font-weight: 300; font-size: 1.1rem }
   opacity: .8;
 }
 
+a {
+  text-decoration: none;
+}
+
+.site-footer a {
+  color: #f5f2ec !important;
+}
+
+
 
 /* Flecha */
 .scroll-up {
