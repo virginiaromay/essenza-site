@@ -525,7 +525,9 @@ h3 { font-weight: 300; font-size: 1.1rem }
   transform: translateY(-2px);
   opacity: 1;
 }
-
+.site-footer a {
+  color: #f5f2ec !important;
+}
 /* Botón CTA */
 .footer-cta {
   display: inline-block;
@@ -575,9 +577,7 @@ a {
   text-decoration: none;
 }
 
-.site-footer a {
-  color: #f5f2ec !important;
-}
+
 
 
 
@@ -654,7 +654,7 @@ a {
 }
 
 .footer-grid {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 /* ===================== WHATSAPP ===================== */
