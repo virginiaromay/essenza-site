@@ -453,110 +453,134 @@ h3 { font-weight: 300; font-size: 1.1rem }
 
 /* ===================== PIE DE PÁGINA ===================== */
 
+/* ============ FOOTER ============ */
+
 .site-footer {
   background: var(--oxford);
   color: #f5f2ec;
-  padding: 3rem 0 2.4rem;
-  margin-top: 4rem;
+  padding: 4rem 0 2.5rem;
 }
 
 .footer-grid {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
   justify-content: space-between;
-  align-items: flex-start;
+  gap: 3rem;
 }
 
 .footer-col {
-  flex: 1 1 220px;
-  max-width: 320px;
+  flex: 1 1 280px;
+  max-width: 340px;
 }
 
-/* Logo en el footer */
+/* Logo */
 .footer-logo {
-  height: 40px;
-  display: block;
-  margin-bottom: 0.9rem;
+  height: 44px;
+  margin-bottom: 1.2rem;
 }
 
-/* Tipos de texto */
-
+/* Texto */
 .footer-brand {
-  margin: 0 0 0.4rem;
-  font-weight: 600;
+  margin: 0 0 .3rem;
   font-size: 1rem;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 .footer-text {
-  margin: 0 0 0.7rem;
-  line-height: 1.5;
+  margin: 0 0 .7rem;
+  font-size: .95rem;
   color: #f5f2ec;
 }
 
+/* Etiquetas */
 .footer-label {
-  margin: 0 0 0.6rem;
+  margin-bottom: .7rem;
+  font-size: .8rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.78rem;
+  letter-spacing: .12em;
 }
 
 .footer-tag {
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
   color: #d6ccbe;
-}
-
-/* Links */
-
-.footer-link {
-  color: #f5f2ec;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: color 0.25s ease, border-color 0.25s ease;
-}
-
-.footer-link:hover {
-  color: #f3e3c8;
-  border-color: #f3e3c8;
+  font-size: .75rem;
+  letter-spacing: .1em;
 }
 
 /* Redes */
-
 .footer-socials {
   display: flex;
-  gap: 0.9rem;
-  align-items: center;
+  gap: 1rem;
+  margin: .6rem 0 1rem;
 }
 
 .footer-social img {
   width: 22px;
   height: 22px;
-  display: block;
-  filter: invert(1); /* si tus íconos son negros, los vuelve blancos */
-  opacity: 0.9;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: transform .25s ease, opacity .25s ease;
 }
 
 .footer-social:hover img {
+  transform: translateY(-2px);
   opacity: 1;
+}
+
+/* Botón CTA */
+.footer-cta {
+  display: inline-block;
+  margin-top: .5rem;
+  background: #f5f2ec;
+  padding: .6rem 1.3rem;
+  border-radius: 999px;
+  color: var(--oxford);
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  transition: .25s;
+}
+
+.footer-cta:hover {
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,.22);
   transform: translateY(-2px);
 }
 
-/* Copy + flecha */
-
+/* Copy */
 .footer-copy {
-  margin: 2rem 0 0;
+  margin-top: 2.8rem;
   text-align: right;
-  font-size: 0.8rem;
+  font-size: .8rem;
   color: #d6ccbe;
-  padding-right: 2.5rem; /* espacio desde el borde derecho */
 }
+
+/* Flecha */
+.scroll-up {
+  position: fixed;
+  right: 2rem;
+  bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #d6ccbe;
+  font-size: .8rem;
+  letter-spacing: .15em;
+  writing-mode: vertical-rl;
+  text-decoration: none;
+}
+
+.scroll-up-arrow {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.scroll-up:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
 
 /* Flecha volver arriba a la derecha */
 .back-to-top {
