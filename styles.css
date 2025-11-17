@@ -451,23 +451,6 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .steps { display: grid; gap: .6rem; counter-reset: step }
 .steps li { background: #fff; border: 1px solid #e6e2de; border-radius: var(--radius); padding: .9rem 1rem }
 
-/* ===================== CONTACTO ===================== */
-.contact-section h2,
-.contact-section p,
-.contact-section label { color: #fff }
-.contact-section { background: var(--oxford) }
-.contact { margin-top: .6rem }
-.form-grid { grid-template-columns: repeat(2, 1fr) }
-label { display: grid; gap: .4rem; font-size: .92rem }
-input, textarea {
-  padding: .7rem .8rem;
-  border: 1px solid #d9d5d1;
-  border-radius: 12px;
-  font: inherit;
-  background: #fff;
-}
-textarea { resize: vertical }
-
 /* ===================== PIE DE PÁGINA ===================== */
 .site-footer { border-top: 1px solid #e6e2de; background: #fff }
 .footer-inner {
