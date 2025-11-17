@@ -551,19 +551,22 @@ h3 { font-weight: 300; font-size: 1.1rem }
 /* Copy + flecha */
 
 .footer-copy {
-  margin: 2.2rem 0 0;
-  text-align: left;
+  margin: 2rem 0 0;
+  text-align: right;
   font-size: 0.8rem;
   color: #d6ccbe;
+  padding-right: 2.5rem; /* espacio desde el borde derecho */
 }
 
-/* Flecha volver arriba */
+/* Flecha volver arriba a la derecha */
 .back-to-top {
   display: inline-block;
-  margin-top: 0.6rem;
   color: #d6ccbe;
   font-size: 1.3rem;
   text-decoration: none;
+  margin-top: 0.4rem;
+  float: right;
+  margin-right: 2.5rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -571,6 +574,7 @@ h3 { font-weight: 300; font-size: 1.1rem }
   color: #f5f2ec;
   transform: translateY(-3px);
 }
+
 
 @media (max-width: 720px) {
   .footer-grid {
@@ -831,53 +835,6 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
 /* En móvil, cuadradas para verse mejor en 2 columnas (opcional) */
 @media (max-width: 900px){
   .tile { aspect-ratio: 1 / 1; }
-}
-/* ===================== BARRA FLOTANTE DE CONTACTO ===================== */
-.contact-bar{
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  display: flex;
-  gap: 8px;
-  background: rgba(255,255,255,0.95);
-  border-radius: 50px;
-  padding: 6px 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.15);
-  z-index: 20;
-  transition: transform .3s ease, opacity .3s ease;
-}
-
-.contact-bar a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-bar img{
-  width: 28px;
-  height: 28px;
-  background: #fff;
-  border-radius: 50%;
-  padding: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.1);
-  transition: transform .2s ease, filter .2s ease;
-}
-
-.contact-bar img:hover{
-  transform: scale(1.15);
-  filter: saturate(1.1);
-}
-
-/* en desktop: semi-oculta y aparece al pasar el mouse */
-@media (min-width: 768px){
-  .contact-bar{
-    transform: translateX(60%);
-    opacity: .65;
-  }
-  .contact-bar:hover{
-    transform: translateX(0);
-    opacity: 1;
-  }
 }
 
 /* ===================== PROCESO (iconos tipo DG-LA) ===================== */
