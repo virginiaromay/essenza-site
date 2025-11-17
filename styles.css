@@ -306,12 +306,21 @@ h3 { font-weight: 300; font-size: 1.1rem }
   opacity: 0.95;
 }
 
+/* Utilidad general de grilla (para Proyectos y otros bloques) */
+.grid {
+  display: grid;
+  gap: 1.2rem;
+}
 
 /* ===================== PROYECTOS ===================== */
 .filters { display: flex; gap: .6rem; margin-bottom: 1rem; flex-wrap: wrap }
 .chip { border: 1px solid #d9d5d1; background: #fff; padding: .45rem .8rem; border-radius: 999px; font: inherit; cursor: pointer }
 .chip.active { background: var(--oxford); color: #fff; border-color: var(--oxford) }
-.gallery { grid-template-columns: repeat(3, 1fr) }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
 .tile { border-radius: var(--radius); overflow: hidden; transition: opacity .25s ease, transform .25s ease }
 .tile[hidden] { display: none }
 
