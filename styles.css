@@ -1202,8 +1202,8 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
 }
 
 .scroll-up-arrow {
-  font-size: 1.1rem;
-  transform: rotate(-90deg);  /* la obligamos a mirar hacia arriba */
+ font-size: 1.4rem;
+  line-height: 1;
 }
 
 .scroll-up:hover {
