@@ -71,6 +71,21 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .logo-link { display: inline-flex; align-items: center }
 .menu { display: flex; gap: 1rem; align-items: center }
 .menu a { color: var(--xeketic); text-decoration: none; font-size: .98rem }
+/* Hover del menú: azul + negrita */
+.menu a:hover {
+  color: var(--oxford);
+  font-weight: 600;
+}
+.menu a.btn-small {
+  background: transparent;
+  border: 1px solid var(--oxford);
+  color: var(--oxford);
+}
+
+.menu a.btn-small:hover {
+  background: var(--oxford);
+  color: #fff;
+}
 .btn {
   display: inline-block;
   padding: .7rem 1rem;
