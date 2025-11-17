@@ -1204,6 +1204,7 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
 .scroll-up-arrow {
  font-size: 1.4rem;
   line-height: 1;
+  transform: rotate(-90deg);
 }
 
 .scroll-up:hover {
