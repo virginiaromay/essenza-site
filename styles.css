@@ -1076,3 +1076,11 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
   transform: translateY(0);
 }
 
+/* Ajuste fino SOLO para el icono de “Comercial” */
+.service-card img[src*="comercial"] {
+  transform: translateX(-4px);
+}
+
+.service-card:hover img[src*="comercial"] {
+  transform: translateX(-4px) scale(1.06);
+}
