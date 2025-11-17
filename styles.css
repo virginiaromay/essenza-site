@@ -529,22 +529,26 @@ h3 { font-weight: 300; font-size: 1.1rem }
 /* Botón CTA */
 .footer-cta {
   display: inline-block;
-  margin-top: .5rem;
+  margin-top: .8rem;
   background: #f5f2ec;
-  padding: .6rem 1.3rem;
+  padding: .7rem 1.6rem;
   border-radius: 999px;
-  color: var(--oxford);
-  font-size: .85rem;
-  font-weight: 600;
+
+  color: var(--oxford) !important;   /* azul Essenza */
+  font-size: .95rem;
+  font-weight: 700;                  /* negrilla */
+
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: .06em;
-  transition: .25s;
+
+  transition: 0.25s;
 }
 
+
 .footer-cta:hover {
-  background: #fff;
-  box-shadow: 0 6px 16px rgba(0,0,0,.22);
+  background: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
   transform: translateY(-2px);
 }
 
