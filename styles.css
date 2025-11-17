@@ -1076,11 +1076,14 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
   transform: translateY(0);
 }
 
-/* Ajuste fino SOLO para el icono de “Comercial” */
-.service-card img[src*="comercial"] {
-  transform: translateX(-6px);
+/* Icono de Comercial ligeramente más grande y mejor alineado */
+.service-card .service-icon img[src*="comercial"] {
+  width: 74px;
+  height: 74px;
+  transform: translateX(-6px); /* lo sube ligeramente para alinearlo */
 }
 
-.service-card:hover img[src*="comercial"] {
+/* Hover: mantiene misma alineación + zoom suave */
+.service-card:hover .service-icon img[src*="comercial"] {
   transform: translateX(-6px) scale(1.06);
 }
