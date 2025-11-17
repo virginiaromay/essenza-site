@@ -204,56 +204,73 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.2rem;
-  margin-top: 1.4rem;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+  justify-items: center; /* centra las tarjetas sueltas */
 }
 
 .service-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.8rem;
-  padding: 1rem 1.1rem;
+  gap: 1rem;
+  padding: 1.6rem 1.8rem;  /* MÁS padding */
   border-radius: var(--radius);
   border: 1px solid #e6e2de;
   background: #fff;
   text-decoration: none;
+  width: 100%;
   color: inherit;
+
   transition:
-    box-shadow .25s ease,
-    border-color .25s ease,
-    transform .15s ease,
-    background .2s ease;
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease,
+    background-color 0.35s ease;
 }
 
 .service-card:hover {
   border-color: var(--oxford);
-  box-shadow: 0 10px 26px rgba(1,41,81,.08);
-  transform: translateY(-1px);
-  background: #fdfbf8;
+  background-color: #faf9f7;
+  box-shadow: 0 10px 24px rgba(1, 41, 81, 0.06);
+  transform: translateY(-3px); /* hover suave */
 }
 
+/* TÍTULO MÁS NEGRITA Y NOTORIO */
 .service-text h3 {
-  margin: 0 0 0.25rem;
-  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+  font-size: 1.18rem;
+  font-weight: 700;         /* negrita */
+  color: var(--xeketic);
 }
 
+/* DESCRIPCIÓN MÁS PEQUEÑA */
 .service-text p {
   margin: 0;
-  font-size: .9rem;
+  font-size: 0.85rem;
   color: #555;
+  line-height: 1.4;
 }
 
+/* ÍCONO MÁS GRANDE */
 .service-icon img {
-  width: 52px;
-  height: 52px;
+  width: 68px;    /* antes 52px */
+  height: 68px;
   object-fit: contain;
+  transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
-/* responsive */
+/* EFECTO ELEGANTE EN ÍCONO */
+.service-card:hover .service-icon img {
+  transform: scale(1.06);
+  opacity: 0.95;
+}
+
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center; /* centra la última fila */
   }
 }
 
