@@ -105,7 +105,7 @@ h3 { font-weight: 300; font-size: 1.1rem }
   background: transparent;
   border: 1px solid transparent;   /* SIN borde visible */
   
-  color: var(--xeketic);            /* texto negro delgado */
+  color: var(--xeketic) !important;           /* texto negro delgado */
   font-weight: 400;
 
   text-decoration: none;
@@ -121,7 +121,7 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .menu a.btn-small:hover {
   background: var(--oxford);
   border-color: var(--oxford);      /* borde aparece solo en hover */
-  color: #fff;
+  color: #fff !important;
   font-weight: 600;
   box-shadow: 0 8px 18px rgba(1, 41, 81, 0.25);
   transform: translateY(-1px);
