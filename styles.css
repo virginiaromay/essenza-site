@@ -312,6 +312,44 @@ h3 { font-weight: 300; font-size: 1.1rem }
   gap: 1.2rem;
 }
 
+/* HOVER: tarjeta azul + texto blanco + transición elegante */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* Fondo azul suave */
+.service-card:hover {
+  background: var(--oxford);
+  border-color: var(--oxford);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(1, 41, 81, 0.2);
+}
+
+/* TÍTULO blanco en hover */
+.service-card:hover h3 {
+  color: #fff;
+}
+
+/* DESCRIPCIÓN blanca en hover */
+.service-card:hover p {
+  color: rgba(255,255,255,0.9);
+}
+
+/* ICONO blanco (invertimos colores) */
+.service-card:hover .service-icon img {
+  filter: brightness(0) invert(1); /* convierte PNG negro a blanco */
+  transform: scale(1.06);
+  opacity: 1;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+
 /* ===================== PROYECTOS ===================== */
 .filters { display: flex; gap: .6rem; margin-bottom: 1rem; flex-wrap: wrap }
 .chip { border: 1px solid #d9d5d1; background: #fff; padding: .45rem .8rem; border-radius: 999px; font: inherit; cursor: pointer }
