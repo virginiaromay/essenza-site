@@ -8,7 +8,11 @@ btn?.addEventListener('click', ()=>{
 });
 
 // ===================== AÑO EN FOOTER =====================
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
 
 // ===================== SCROLL SUAVE EN ANCLAS =====================
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
