@@ -1078,9 +1078,9 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
 
 /* Ajuste fino SOLO para el icono de “Comercial” */
 .service-card img[src*="comercial"] {
-  transform: translateX(-4px);
+  transform: translateX(-6px);
 }
 
 .service-card:hover img[src*="comercial"] {
-  transform: translateX(-4px) scale(1.06);
+  transform: translateX(-6px) scale(1.06);
 }
