@@ -239,7 +239,7 @@ h3 { font-weight: 300; font-size: 1.1rem }
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: rgba(1, 41, 81, 0.04);  /* velo muy suave */
+  background: rgba(1, 41, 81, 0.06);  /* velo muy suave */
   opacity: 0;
   transition: opacity 0.35s ease;
   z-index: 0;
