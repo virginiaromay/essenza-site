@@ -614,6 +614,24 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .footer-social img {
   filter: invert(1);
 }
+
+
+@media (max-width: 720px) {
+  .site-footer {
+    padding: 3rem 1.8rem 2rem;   /* ← padding lateral para mobile */
+  }
+
+  .footer-grid {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
+  .footer-copy {
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;         /* mejor lectura en móvil */
+  }
+}
 /* ===================== WHATSAPP ===================== */
 .whatsapp {
   position: fixed;
