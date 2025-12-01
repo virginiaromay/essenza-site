@@ -10,7 +10,8 @@
 </head>
 
 <body>
-  <!-- Header fijo igual al del sitio, pero con links a la home -->
+
+  <!-- Header fijo igual al sitio -->
   <header class="site-header">
     <div class="container nav">
       <a class="logo-link" href="/" aria-label="Essenza">
@@ -30,6 +31,7 @@
   <main>
     <section class="section">
       <div class="container" style="max-width: 680px;">
+
         <p style="margin-bottom: .8rem;">
           <a href="/" style="text-decoration:none; font-size:.9rem;">← Volver a inicio</a>
         </p>
@@ -37,12 +39,11 @@
         <h2>Cuéntanos sobre tu proyecto</h2>
         <p class="lede">
           Déjanos tus datos y una breve descripción de tu espacio. Te contactaremos para
-          coordinar una reunión y ver cómo podemos ayudarte a diseñar lo que estás buscando.
+          coordinar una reunión y ver cómo podemos ayudarte.
         </p>
 
-        <form class="contact-form"
-      action="https://formspree.io/f/mgvgyedp"
-      method="POST">
+        <!-- FORMULARIO CORRECTO (sin action ni method) -->
+        <form id="contact-form" class="contact-form">
 
           <label>
             Nombre
@@ -74,49 +75,48 @@
           <label>
             Cuéntanos un poco más
             <textarea name="mensaje" rows="5" required
-              placeholder="Metros aprox, ambiente(s) a intervenir, estilo que te gusta, ciudad, etc."></textarea>
+              placeholder="Metros aprox, ambientes, estilo que te gusta, ciudad, etc."></textarea>
           </label>
 
           <button type="submit" class="btn">Enviar mensaje</button>
+        </form>
 
-          </form>
-
+        <!-- MENSAJE DE ÉXITO -->
         <div id="form-success" style="display:none; margin-top:20px; font-size:1.1rem; color:#012951;">
-        ¡Gracias! Hemos recibido tu mensaje y te contactaremos muy pronto.
-         </div>
-        
+          ¡Gracias! Hemos recibido tu mensaje y te contactaremos muy pronto.
+        </div>
+
       </div>
     </section>
-
-
-        <!-- (Opcional) podrías repetir aquí el footer, pero no es obligatorio -->
   </main>
 
+  <!-- Script principal del sitio -->
   <script src="../script.js"></script>
 
-<script>
-  const form = document.getElementById("contact-form");
+  <!-- Script del formulario -->
+  <script>
+    const form = document.getElementById("contact-form");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    const data = new FormData(form);
-    const endpoint = "https://formspree.io/f/mgvgyedp";
+      const data = new FormData(form);
+      const endpoint = "https://formspree.io/f/mgvgyedp";
 
-    const response = await fetch(endpoint, {
-      method: "POST",
-      body: data,
-      headers: { "Accept": "application/json" }
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        form.style.display = "none";
+        document.getElementById("form-success").style.display = "block";
+      } else {
+        alert("Hubo un error al enviar el mensaje. Intenta nuevamente.");
+      }
     });
-
-    if (response.ok) {
-      form.style.display = "none";
-      document.getElementById("form-success").style.display = "block";
-    } else {
-      alert("Hubo un error al enviar el mensaje. Intenta nuevamente.");
-    }
-  });
-</script>
+  </script>
 
 </body>
 </html>
