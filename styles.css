@@ -1265,18 +1265,23 @@ body main {
 }
 
 
+/* ===================== CONTACTO ===================== */
+
 .contact-form {
   display: grid;
   gap: 1rem;
   margin-top: 1.8rem;
 }
 
+/* Cada campo (label + input) en columna */
 .contact-form label {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.35rem;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
 }
 
+/* Inputs, selects y textarea con el look Essenza */
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
@@ -1284,11 +1289,27 @@ body main {
   border-radius: 10px;
   border: 1px solid #e2ded8;
   font: inherit;
+  width: 100%;
 }
 
+/* Focus bonito */
 .contact-form input:focus,
 .contact-form textarea:focus,
 .contact-form select:focus {
   outline: 2px solid rgba(1,41,81,.25);
   border-color: var(--oxford);
+}
+
+/* En pantallas grandes, si quieres que Nombre/Email/Teléfono vayan en fila */
+.contact-form .row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* En móvil, esos 3 campos se apilan */
+@media (max-width: 720px) {
+  .contact-form .row-3 {
+    grid-template-columns: 1fr;
+  }
 }
