@@ -1241,6 +1241,14 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
   transform: rotate(-90deg);
 }
 
+.about-photo img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+}
+
+
 .scroll-up:hover {
   color: #f5f2ec;
   transform: translateY(-4px);
