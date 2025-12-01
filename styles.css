@@ -1253,3 +1253,13 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
   color: #f5f2ec;
   transform: translateY(-4px);
 }
+
+/* Compensar header fijo en todo el sitio */
+body main {
+  padding-top: 88px;
+}
+
+/* Excepción: el HERO ya tiene su propio posicionamiento */
+.hero {
+  margin-top: 0 !important;
+}
