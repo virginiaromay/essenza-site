@@ -1340,3 +1340,16 @@ body main {
 .contact-form .btn:active {
   transform: translateY(0); /* cuando se presiona vuelve */
 }
+
+/* Mensaje de éxito – animación Essenza */
+#form-success {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+#form-success.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
