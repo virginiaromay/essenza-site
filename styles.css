@@ -1322,3 +1322,21 @@ body main {
   letter-spacing: 0.04em;
   text-transform: none; /* o 'uppercase' si algún día lo quieres en mayúsculas */
 }
+
+
+/* Hover elegante para botones del formulario */
+.contact-form .btn {
+  background-color: var(--oxford);  /* tu azul Essenza */
+  color: #fff;
+  transition: background-color .25s ease, transform .25s ease;
+  cursor: pointer;
+}
+
+.contact-form .btn:hover {
+  background-color: #001e3c; /* un azul un poquito más oscuro */
+  transform: translateY(-2px); /* efecto suave */
+}
+
+.contact-form .btn:active {
+  transform: translateY(0); /* cuando se presiona vuelve */
+}
