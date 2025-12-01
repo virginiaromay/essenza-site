@@ -1313,3 +1313,12 @@ body main {
     grid-template-columns: 1fr;
   }
 }
+
+/* Ajuste tipográfico del botón del formulario de contacto */
+.contact-form button.btn {
+  font-family: 'EncodeSans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none; /* o 'uppercase' si algún día lo quieres en mayúsculas */
+}
