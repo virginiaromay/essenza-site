@@ -92,29 +92,40 @@
   <script src="../script.js"></script>
 
   <!-- Script del formulario -->
-  <script>
-    const form = document.getElementById("contact-form");
+  <script src="../script.js"></script>
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+<script>
+  const form = document.getElementById("contact-form");
 
-      const data = new FormData(form);
-      const endpoint = "https://formspree.io/f/mgvgyedp";
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      const response = await fetch(endpoint, {
-        method: "POST",
-        body: data,
-        headers: { "Accept": "application/json" }
-      });
+    const data = new FormData(form);
+    const endpoint = "https://formspree.io/f/mgvgyedp";
 
-      if (response.ok) {
-        form.style.display = "none";
-        document.getElementById("form-success").style.display = "block";
-      } else {
-        alert("Hubo un error al enviar el mensaje. Intenta nuevamente.");
-      }
+    const response = await fetch(endpoint, {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
     });
-  </script>
+
+    if (response.ok) {
+      form.style.display = "none";
+      document.getElementById("intro-text").style.display = "none";
+
+      const successMsg = document.getElementById("form-success");
+      successMsg.style.display = "block";
+
+      // activa la animación
+      setTimeout(() => {
+        successMsg.classList.add("show");
+      }, 10);
+
+    } else {
+      alert("Hubo un error al enviar el mensaje. Intenta nuevamente.");
+    }
+  });
+</script>
 
 </body>
 </html>
