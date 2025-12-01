@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto · Essenza Studio</title>
+
+  <!-- CSS principal del sitio -->
+  <link rel="stylesheet" href="../styles.css?v=9" />
+</head>
+
+<body>
+  <!-- Header fijo igual al del sitio, pero con links a la home -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo-link" href="/" aria-label="Essenza">
+        <img class="logo" src="../assets/images/logo.png" alt="Essenza logo">
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="menu" id="menu">
+        <a href="/#inicio">Inicio</a>
+        <a href="/#quienes">Quiénes somos</a>
+        <a href="/#servicios">Servicios</a>
+        <a href="/#proyectos">Proyectos</a>
+        <a href="/#contacto" class="btn btn-small">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 680px;">
+        <p style="margin-bottom: .8rem;">
+          <a href="/" style="text-decoration:none; font-size:.9rem;">← Volver a inicio</a>
+        </p>
+
+        <h2>Cuéntanos sobre tu proyecto</h2>
+        <p class="lede">
+          Déjanos tus datos y una breve descripción de tu espacio. Te contactaremos para
+          coordinar una reunión y ver cómo podemos ayudarte a diseñar lo que estás buscando.
+        </p>
+
+        <form class="contact-form"
+              action="mailto:hola@essenzastudio.cl"
+              method="POST"
+              enctype="text/plain">
+
+          <label>
+            Nombre
+            <input type="text" name="nombre" required>
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+
+          <label>
+            Teléfono
+            <input type="text" name="telefono">
+          </label>
+
+          <label>
+            ¿Qué tipo de proyecto tienes?
+            <select name="tipo_proyecto">
+              <option value="">Selecciona una opción</option>
+              <option value="residencial">Diseño interior residencial</option>
+              <option value="comercial">Diseño interior comercial</option>
+              <option value="asesoria">Asesoría en decoración</option>
+              <option value="remodelacion">Remodelación</option>
+              <option value="otro">Otro</option>
+            </select>
+          </label>
+
+          <label>
+            Cuéntanos un poco más
+            <textarea name="mensaje" rows="5" required
+              placeholder="Metros aprox, ambiente(s) a intervenir, estilo que te gusta, ciudad, etc."></textarea>
+          </label>
+
+          <button type="submit" class="btn">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- (Opcional) podrías repetir aquí el footer, pero no es obligatorio -->
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>
