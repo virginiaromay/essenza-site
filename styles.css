@@ -464,7 +464,7 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .site-footer {
   background: var(--oxford);
   color: #f5f2ec;
-  padding: 4rem 0 2.5rem;
+  padding: 4rem 3rem 2.5rem;
 }
 
 /* Contenedor centrado */
