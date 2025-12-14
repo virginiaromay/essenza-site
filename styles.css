@@ -16,9 +16,9 @@
 
 /* Palabras clave con voz editorial */
 .emphasis {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.02em;
   color: inherit;
   margin: 0 0.08em;
