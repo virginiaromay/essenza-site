@@ -305,7 +305,7 @@ h3 { font-weight: 300; font-size: 1.1rem }
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: rgba(1, 41, 81, 0.035); /* más sutil */
+  background: rgba(1, 41, 81, 0.06); /* más sutil */
   opacity: 0;
   transition: opacity 0.35s ease;
   z-index: 0;
