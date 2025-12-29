@@ -400,26 +400,42 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 /* ===================== PROYECTOS ===================== */
 
 .filters{
-  display:flex;
-  gap:.6rem;
-  margin-bottom: 1rem;
+  display: flex;
+  gap: .6rem;
+  margin: 1.2rem 0 1.4rem;
   flex-wrap: wrap;
 }
 
 .chip{
-  border: 1px solid #d9d5d1;
+  appearance: none;
   background: #fff;
-  padding: .45rem .8rem;
-  border-radius: 999px;
+  color: var(--xeketic);
+  border: 1px solid #e6e2de;
+  border-radius: 12px;
+  padding: .55rem .9rem;
   font: inherit;
   cursor: pointer;
-  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  transition:
+    background-color .25s ease,
+    box-shadow .25s ease,
+    transform .25s ease,
+    border-color .25s ease,
+    color .25s ease;
+}
+
+.chip:hover{
+  background: #faf9f7;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
 }
 
 .chip.active{
   background: var(--oxford);
   color: #fff;
   border-color: var(--oxford);
+  box-shadow: 0 10px 22px rgba(1,41,81,0.18);
 }
 
 .gallery{
