@@ -570,6 +570,25 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   .gallery .tile:hover img{ transform: none; }
 }
 
+/* ===================== PROYECTOS · ANIMACIÓN FILTRO ===================== */
+
+/* Estado normal */
+.gallery .tile{
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity .35s ease,
+    transform .35s ease;
+}
+
+/* Cuando se ocultan por filtro */
+.gallery .tile[hidden]{
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+
 /* ===================== CONTACTO ===================== */
 .contact-form{
   display: grid;
