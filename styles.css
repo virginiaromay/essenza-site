@@ -411,7 +411,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   background: #fff;
   color: var(--xeketic);
   border: 1px solid #e6e2de;
-  border-radius: 18px;
+  border-radius: 16px;
   padding: .55rem .9rem;
   font: inherit;
   cursor: pointer;
