@@ -306,6 +306,27 @@ h3{ font-weight: 300; font-size: 1.1rem; }
     background-color .35s ease;
 }
 
+/* Overlay sutil para hover (velo encima de la tarjeta) */
+.service-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.035); /* gris MUY suave */
+  opacity: 0;
+  transition: opacity .35s ease;
+  z-index: 0;
+}
+
+.service-card:hover::before{
+  opacity: 1;
+}
+
+/* asegura que el contenido quede encima del overlay */
+.service-card > *{
+  position: relative;
+  z-index: 1;
+}
+
 .service-card:hover{
   transform: translateY(-2px);
   box-shadow:
