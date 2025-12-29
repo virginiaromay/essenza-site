@@ -397,32 +397,56 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   .service-text p{ font-size:.84rem; max-width:30ch; }
   .service-cta{ font-size:.76rem; }
 }
-/* ===================== PROYECTOS · ESSENZA HOVER ===================== */
+/* ===================== PROYECTOS ===================== */
 
-/* Tile base */
+.filters{
+  display:flex;
+  gap:.6rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.chip{
+  border: 1px solid #d9d5d1;
+  background: #fff;
+  padding: .45rem .8rem;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.chip.active{
+  background: var(--oxford);
+  color: #fff;
+  border-color: var(--oxford);
+}
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.tile[hidden]{ display: none; }
+
+/* Tile (coherente con tarjetas de Servicios) */
 .gallery .tile{
   position: relative;
-  border-radius: 10px;                 /* coherente con servicios */
   overflow: hidden;
+  border-radius: var(--radius);
+  aspect-ratio: 16 / 10;
   background: #fff;
+
   box-shadow:
     0 6px 16px rgba(0,0,0,0.05),
     inset 0 0 0 1px rgba(0,0,0,0.04);
+
   transition:
     transform .35s ease,
     box-shadow .35s ease;
 }
 
-/* Imagen */
-.gallery .tile img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1);
-  transition: transform .6s ease;
-}
-
-/* Hover: eleva + sombra un poco más */
 .gallery .tile:hover{
   transform: translateY(-2px);
   box-shadow:
@@ -430,12 +454,28 @@ h3{ font-weight: 300; font-size: 1.1rem; }
     inset 0 0 0 1px rgba(0,0,0,0.06);
 }
 
-/* Zoom muy sutil (editorial, no “efecto” exagerado) */
+/* Si tu HTML usa <a class="project-link"> dentro del tile */
+.gallery .tile .project-link{
+  display: block;
+  height: 100%;
+}
+
+/* Imagen */
+.gallery .tile img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform .6s ease, opacity .4s ease;
+  will-change: transform;
+}
+
 .gallery .tile:hover img{
   transform: scale(1.02);
 }
 
-/* Overlay / Caption */
+/* Overlay / Caption: elegante, legible */
 .gallery .tile .caption{
   position: absolute;
   inset: 0;
@@ -443,7 +483,6 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   align-items: flex-end;
   padding: 1.1rem;
 
-  /* overlay más elegante (de abajo hacia arriba) */
   background: linear-gradient(
     to top,
     rgba(0,0,0,0.55),
@@ -456,22 +495,28 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   transition: opacity .35s ease, transform .35s ease;
 }
 
-/* Activa overlay */
-.gallery .tile:hover .caption{
+.gallery .tile:hover .caption,
+.gallery .tile:focus-within .caption{
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Texto overlay */
+/* Texto del overlay: soporta span (tu HTML) y también h3/p (por si lo cambias) */
+.gallery .tile .caption span,
 .gallery .tile .caption h3,
 .gallery .tile .caption p{
   color: #fff;
   margin: 0;
 }
 
+.gallery .tile .caption span,
 .gallery .tile .caption h3{
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: 'HelveticaNowDisplay','EncodeSans',system-ui,sans-serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  opacity: .95;
 }
 
 .gallery .tile .caption p{
@@ -480,277 +525,33 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   opacity: .9;
 }
 
-/* Accesibilidad: hover también en teclado */
-.gallery .tile:focus-within{
-  transform: translateY(-2px);
-  box-shadow:
-    0 10px 24px rgba(0,0,0,0.08),
-    inset 0 0 0 1px rgba(0,0,0,0.06);
+/* Accesibilidad (teclado) */
+.gallery .tile .project-link:focus-visible{
+  outline: none;
 }
-
-/* ===================== PROYECTOS ===================== LO VIEJO
-.filters{ display:flex; gap:.6rem; margin-bottom:1rem; flex-wrap:wrap; }
-
-.chip{
-  border: 1px solid #d9d5d1;
-  background: #fff;
-  padding: .45rem .8rem;
-  border-radius: 999px;
-  font: inherit;
-  cursor: pointer;
-}
-.chip.active{ background: var(--oxford); color: #fff; border-color: var(--oxford); }
-
-.gallery{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.2rem;
-}
-
-.tile[hidden]{ display:none; }
-
-/* Proyectos · Fade Luxe (efecto Essenza) */
-.gallery .tile{
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius);
-  aspect-ratio: 16 / 10;
-  line-height: 0;
-}
-
-.gallery .tile .project-link{
-  display: block;
-  line-height: 0;
-}
-
-.gallery .tile img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: opacity .4s ease, transform .6s ease;
-  will-change: transform;
-}
-
-.gallery .tile .caption{
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  background: rgba(0,0,0,.55);
-  opacity: 0;
-  transition: opacity .8s ease-in-out;
-}
-
-.gallery .tile .caption span{
-  color: #fff;
-  font-family: 'HelveticaNowDisplay','EncodeSans',system-ui,sans-serif;
-  font-weight: 200;
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
-  text-transform: uppercase;
-  letter-spacing: .6px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity .8s ease-in-out, transform .8s ease-in-out;
-  text-align: center;
-}
-
-.gallery .tile:hover img{ transform: scale(1.05); opacity: .96; }
-.gallery .tile:hover .caption{ opacity: 1; }
-.gallery .tile:hover .caption span{ opacity: 1; transform: translateY(0); }
-
-/* Accesible con teclado */
 .gallery .tile .project-link:focus-visible .caption{
   opacity: 1;
+  transform: translateY(0);
   outline: 2px solid #fff;
   outline-offset: -6px;
 }
-.gallery .tile .project-link:focus-visible .caption span{
-  opacity: 1;
-  transform: none;
-}
-*/
-/* Respeta usuarios con “reducir movimiento” */
-@media (prefers-reduced-motion: reduce){
-  .gallery .tile img,
-  .gallery .tile .caption,
-  .gallery .tile .caption span{
-    transition: none;
-  }
-}
 
+/* Responsive */
 @media (max-width: 900px){
-  .gallery{ grid-template-columns: 1fr 1fr; }
+  .gallery{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-
 @media (max-width: 560px){
   .gallery{ grid-template-columns: 1fr; }
 }
 
-/* ===================== PROCESO ===================== */
-.steps{ display: grid; gap: .6rem; counter-reset: step; }
-.steps li{ background: #fff; border: 1px solid #e6e2de; border-radius: var(--radius); padding: .9rem 1rem; }
-
-/* ===================== PIE DE PÁGINA ===================== */
-.site-footer{
-  background: var(--oxford);
-  color: #f5f2ec;
-  padding: 4rem 3rem 2.5rem;
-}
-
-.footer-grid{
-  display: flex;
-  justify-content: space-between;
-  gap: 3rem;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.footer-col{
-  flex: 1 1 280px;
-  max-width: 340px;
-}
-
-.footer-logo{ height: 44px; margin-bottom: 1.2rem; }
-
-.footer-brand{
-  margin: 0 0 .3rem;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.footer-text{
-  margin: 0 0 .7rem;
-  font-size: .95rem;
-  color: #f5f2ec;
-}
-
-.footer-label{
-  margin-bottom: .7rem;
-  font-size: .8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-}
-
-.footer-tag{
-  color: #d6ccbe;
-  font-size: .75rem;
-  letter-spacing: .1em;
-}
-
-.footer-socials{
-  display: flex;
-  gap: 1rem;
-  margin: .6rem 0 1rem;
-}
-
-.footer-social img{
-  width: 22px;
-  height: 22px;
-  transition: transform .25s ease, opacity .25s ease;
-  filter: invert(1);
-}
-
-.footer-social:hover img{
-  transform: translateY(-2px);
-  opacity: 1;
-}
-
-.footer-link{
-  color: #f5f2ec !important;
-  text-decoration: none !important;
-  border-bottom: none !important;
-  transition: opacity .25s ease;
-}
-.footer-link:hover{ opacity: .8; }
-
-.footer-cta{
-  display: inline-block;
-  margin-top: 1.2rem;
-  padding: 0.7rem 1.6rem;
-  border-radius: 999px;
-  background: #f5f2ec;
-  color: var(--oxford) !important;
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background-color .25s ease, color .25s ease,
-              transform .25s ease, box-shadow .25s ease;
-}
-
-.footer-cta:hover{
-  background: #ffffff;
-  color: var(--oxford) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-}
-
-.footer-copy{
-  margin-top: 2.8rem;
-  font-size: .8rem;
-  color: #d6ccbe;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-/* Flecha lateral IR ARRIBA */
-.scroll-up{
-  position: fixed;
-  right: 1.6rem;
-  bottom: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .3rem;
-  color: #d6ccbe;
-  font-size: .78rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  text-decoration: none;
-  z-index: 60;
-  transition: color .3s ease, transform .3s ease, opacity .3s ease;
-}
-
-.scroll-up-arrow{
-  font-size: 1.4rem;
-  line-height: 1;
-  transform: rotate(-90deg);
-}
-
-.scroll-up:hover{
-  color: #f5f2ec;
-  transform: translateY(-4px);
-}
-
-/* ===================== WHATSAPP ===================== */
-.whatsapp{
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  width: 56px;
-  height: 56px;
-  display: inline-grid;
-  place-items: center;
-  background: #25D366;
-  border-radius: 50%;
-  box-shadow: 0 8px 20px rgba(0,0,0,.15);
-  z-index: 20;
-}
-.whatsapp svg{ width: 28px; height: 28px; fill: #fff; }
-.whatsapp:focus{
-  outline: 3px solid rgba(1,41,81,.35);
-  outline-offset: 2px;
+/* Respeta “reducir movimiento” */
+@media (prefers-reduced-motion: reduce){
+  .gallery .tile,
+  .gallery .tile img,
+  .gallery .tile .caption{
+    transition: none !important;
+  }
+  .gallery .tile:hover img{ transform: none; }
 }
 
 /* ===================== CONTACTO ===================== */
