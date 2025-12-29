@@ -341,6 +341,12 @@ h3 { font-weight: 300; font-size: 1.1rem }
   transform:translateX(2px);
 }
 
+/* Normaliza el peso visual del icono Comercial */
+.service-card[href*="comercial"] .service-icon img{
+  transform: scale(0.9);
+  transform-origin: center;
+}
+
 /* ===================== SERVICIOS · RESPONSIVE ===================== */
 
 @media (max-width:900px){
