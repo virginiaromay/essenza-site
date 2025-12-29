@@ -263,134 +263,123 @@ h3 { font-weight: 300; font-size: 1.1rem }
 
 /* ===================== SERVICIOS ===================== */
 
-.services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.6rem;
-  margin-top: 1.6rem;
-  justify-content: center; /* centra todas las filas */
+.services-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.6rem;
+  margin-top:1.6rem;
+  justify-content:center;
 }
 
-/* Card */
-.service-card {
-  display: flex;
-  align-items: flex-start;          /* más editorial */
-  justify-content: space-between;
-  gap: 1.1rem;
+.service-card{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:1.1rem;
 
-  padding: 1.7rem 1.8rem;
-  border-radius: 10px;
-  border: none;
-  background: #fff;
+  padding:1.7rem 1.8rem;
+  border-radius:10px;
+  background:#fff;
 
+  /* borde editorial */
   box-shadow:
-    0 6px 16px rgba(0,0,0,0.045),
-    inset 0 0 0 1px rgba(0,0,0,0.04);
-  
-  text-decoration: none;
-  color: inherit;
+    0 8px 20px rgba(0,0,0,.05),
+    inset 0 0 0 1px rgba(0,0,0,.04);
 
-  flex: 1 1 280px;
-  max-width: 360px;
+  text-decoration:none;
+  color:inherit;
 
-  position: relative;
-  overflow: hidden;
+  flex:1 1 280px;
+  max-width:360px;
+
+  position:relative;
+  overflow:hidden;
 
   transition:
-    box-shadow 0.35s ease,
-    border-color 0.35s ease,
-    transform 0.35s ease,
-    background-color 0.35s ease;
+    box-shadow .35s ease,
+    transform .35s ease,
+    background-color .35s ease;
 }
 
-/* Velo suave */
-.service-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: rgba(1, 41, 81, 0.06); /* más sutil */
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  z-index: 0;
+.service-card:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 10px 26px rgba(0,0,0,.06),
+    inset 0 0 0 1px rgba(0,0,0,.06);
 }
 
-.service-card > * {
-  position: relative;
-  z-index: 1;
+.service-icon img{
+  width:56px;
+  height:56px;
+  object-fit:contain;
 }
 
-/* Hover: elegante y leve */
-.service-card:hover {
-  border-color: #d9d3cd;
-  background-color: #fbfaf8;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
+.service-text h3{
+  margin:0 0 .35rem;
+  font-size:1.08rem;
+  font-weight:650;
 }
 
-.service-card:hover::before {
-  opacity: 1;
+.service-text p{
+  margin:0;
+  font-size:.85rem;
+  line-height:1.55;
+  color:rgba(20,20,20,.62);
+  max-width:26ch;
 }
 
-/* Icono */
-.service-icon img {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-  opacity: 0.92;
+.service-cta{
+  display:inline-block;
+  margin-top:.65rem;
+  font-size:.78rem;
+  color:rgba(20,20,20,.55);
+  transition:color .35s ease, transform .35s ease;
 }
 
-.service-card:hover .service-icon img {
-  transform: scale(1.04);
-  opacity: 1;
+.service-card:hover .service-cta{
+  color:rgba(20,20,20,.8);
+  transform:translateX(2px);
 }
 
-/* Título */
-.service-text h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1.08rem;
-  font-weight: 650;
-  letter-spacing: 0.2px;
-  color: var(--xeketic);
+/* ===================== SERVICIOS · RESPONSIVE ===================== */
+
+@media (max-width:900px){
+  .services-grid{
+    gap:1.2rem;
+  }
 }
 
-/* Descripción */
-.service-text p {
-  margin: 0;
-  font-size: 0.85rem;              /* antes 0.9rem */
-  line-height: 1.55;               /* más aire */
-  color: rgba(20, 20, 20, 0.62);   /* más suave */
-  max-width: 26ch;
+@media (max-width:600px){
+  .services-grid{
+    gap:1rem;
+    margin-top:1.2rem;
+  }
+
+  .services-grid .service-card{
+    flex:1 1 100%;
+    max-width:100%;
+    padding:1.25rem;
+    border-radius:12px;
+  }
+
+  .service-icon img{
+    width:48px;
+    height:48px;
+  }
+
+  .service-text h3{
+    font-size:1.02rem;
+  }
+
+  .service-text p{
+    font-size:.84rem;
+    max-width:30ch;
+  }
+
+  .service-cta{
+    font-size:.76rem;
+  }
 }
-
-/* Icono de Comercial ligeramente más grande y mejor alineado */
-.service-card .service-icon img[src*="comercial"] {
-  width: 76px;
-  height: 76px;
-  transform: translateX(-6px); /* lo sube ligeramente para alinearlo */
-}
-
-/* Hover: mantiene misma alineación + zoom suave */
-.service-card:hover .service-icon img[src*="comercial"] {
-  transform: translateX(-6px) scale(1.06);
-}
-
-.service-cta {
-  display: inline-block;
-  margin-top: 0.65rem;
-  font-size: 0.78rem;                 /* más pequeño que la frase */
-  color: rgba(20, 20, 20, 0.55);       /* más suave */
-  letter-spacing: 0.3px;              /* detalle editorial */
-  transition: color 0.35s ease, transform 0.35s ease;
-}
-
-.service-card:hover .service-cta {
-  color: rgba(20, 20, 20, 0.8);
-  transform: translateX(2px);
-}
-
-
 
 
 
@@ -1340,36 +1329,3 @@ body main {
 
 
 
-/* SERVICIOS · MOBILE (TEST) */
-@media (max-width: 600px){
-  .services-grid{
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  .services-grid .service-card{
-    flex: 1 1 100%;
-    max-width: 100%;
-    padding: 1.25rem 1.25rem;
-    border-radius: 12px;
-  }
-
-  .service-icon img{
-    width: 48px;
-    height: 48px;
-  }
-
-  .service-text h3{
-    font-size: 1.02rem;
-  }
-
-  .service-text p{
-    font-size: .84rem;
-    line-height: 1.55;
-    max-width: 30ch;
-  }
-
-  .service-cta{
-    font-size: .76rem;
-  }
-}
