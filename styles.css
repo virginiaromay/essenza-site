@@ -354,9 +354,9 @@ h3 { font-weight: 300; font-size: 1.1rem }
 /* Descripción */
 .service-text p {
   margin: 0;
-  font-size: 0.9rem;
-  color: rgba(20, 20, 20, 0.68);
-  line-height: 1.5;
+  font-size: 0.85rem;              /* antes 0.9rem */
+  line-height: 1.55;               /* más aire */
+  color: rgba(20, 20, 20, 0.62);   /* más suave */
   max-width: 26ch;
 }
 
@@ -372,17 +372,18 @@ h3 { font-weight: 300; font-size: 1.1rem }
   transform: translateX(-6px) scale(1.06);
 }
 
-.service-cta{
-  display:inline-block;
-  margin-top:.75rem;
-  font-size:.85rem;
-  color:rgba(20,20,20,.6);
-  transition:color .35s ease, transform .35s ease;
+.service-cta {
+  display: inline-block;
+  margin-top: 0.65rem;
+  font-size: 0.78rem;                 /* más pequeño que la frase */
+  color: rgba(20, 20, 20, 0.55);       /* más suave */
+  letter-spacing: 0.3px;              /* detalle editorial */
+  transition: color 0.35s ease, transform 0.35s ease;
 }
 
-.service-card:hover .service-cta{
-  color:rgba(20,20,20,.85);
-  transform:translateX(2px);
+.service-card:hover .service-cta {
+  color: rgba(20, 20, 20, 0.8);
+  transform: translateX(2px);
 }
 
 
