@@ -262,6 +262,7 @@ h3 { font-weight: 300; font-size: 1.1rem }
 .pillars li { padding: .75rem 1rem; border: 1px solid #e6e2de; border-radius: var(--radius); background: #fff }
 
 /* ===================== SERVICIOS ===================== */
+
 .services-grid {
   display: flex;
   flex-wrap: wrap;
@@ -270,145 +271,111 @@ h3 { font-weight: 300; font-size: 1.1rem }
   justify-content: center; /* centra todas las filas */
 }
 
+/* Card */
 .service-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;          /* más editorial */
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1.6rem 1.8rem;
+  gap: 1.1rem;
+
+  padding: 1.7rem 1.8rem;
   border-radius: var(--radius);
-  border: 1px solid #e6e2de;
+  border: 1px solid #e8e4df;
   background: #fff;
-  text-decoration: none; /* quita subrayado */
-  color: inherit;        /* mano de link */
 
-  flex: 1 1 280px;      /* tamaño base */
-  max-width: 360px;     /* no se estiran demasiado */
+  text-decoration: none;
+  color: inherit;
 
-  position: relative;     /* para el efecto de fade */
+  flex: 1 1 280px;
+  max-width: 360px;
+
+  position: relative;
   overflow: hidden;
-  
+
   transition:
     box-shadow 0.35s ease,
     border-color 0.35s ease,
     transform 0.35s ease,
     background-color 0.35s ease;
 }
-/* capa suave para el fade */
+
+/* Velo suave */
 .service-card::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: rgba(1, 41, 81, 0.06);  /* velo muy suave */
+  background: rgba(1, 41, 81, 0.035); /* más sutil */
   opacity: 0;
   transition: opacity 0.35s ease;
   z-index: 0;
 }
 
-/* que el contenido quede por encima de la capa */
 .service-card > * {
   position: relative;
   z-index: 1;
 }
 
-/* hover completo: sombra + leve elevación + fade */
+/* Hover: elegante y leve */
 .service-card:hover {
-  border-color: var(--oxford);
-  background-color: #faf9f7;
-  box-shadow: 0 10px 24px rgba(1, 41, 81, 0.06);
-  transform: translateY(-3px);
+  border-color: #d9d3cd;
+  background-color: #fbfaf8;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }
 
 .service-card:hover::before {
   opacity: 1;
 }
 
-/* icono con micro-zoom (lo que ya tenías) */
+/* Icono */
 .service-icon img {
-  width: 68px;
-  height: 68px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
   transition: transform 0.35s ease, opacity 0.35s ease;
+  opacity: 0.92;
 }
 
 .service-card:hover .service-icon img {
-  transform: scale(1.06);
-  opacity: 0.95;
+  transform: scale(1.04);
+  opacity: 1;
 }
 
-/* TÍTULO MÁS NEGRITA Y NOTORIO */
+/* Título */
 .service-text h3 {
   margin: 0 0 0.35rem;
-  font-size: 1.18rem;
-  font-weight: 700;         /* negrita */
+  font-size: 1.08rem;
+  font-weight: 650;
+  letter-spacing: 0.2px;
   color: var(--xeketic);
 }
 
-/* DESCRIPCIÓN MÁS PEQUEÑA */
+/* Descripción */
 .service-text p {
   margin: 0;
-  font-size: 0.85rem;
-  color: #555;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  color: rgba(20, 20, 20, 0.68);
+  line-height: 1.5;
+  max-width: 26ch;
 }
 
-/* ÍCONO MÁS GRANDE */
-.service-icon img {
-  width: 68px;    /* antes 52px */
-  height: 68px;
-  object-fit: contain;
-  transition: transform 0.35s ease, opacity 0.35s ease;
+/* Icono de Comercial ligeramente más grande y mejor alineado */
+.service-card .service-icon img[src*="comercial"] {
+  width: 76px;
+  height: 76px;
+  transform: translateX(-6px); /* lo sube ligeramente para alinearlo */
 }
 
-/* EFECTO ELEGANTE EN ÍCONO */
-.service-card:hover .service-icon img {
-  transform: scale(1.06);
-  opacity: 0.95;
+/* Hover: mantiene misma alineación + zoom suave */
+.service-card:hover .service-icon img[src*="comercial"] {
+  transform: translateX(-6px) scale(1.06);
 }
 
-/* Utilidad general de grilla (para Proyectos y otros bloques) */
-.grid {
-  display: grid;
-  gap: 1.2rem;
-}
 
-/* HOVER: tarjeta azul + texto blanco + transición elegante */
-.service-card {
-  position: relative;
-  overflow: hidden;
-  transition:
-    background-color 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease,
-    transform 0.35s ease;
-}
 
-/* Fondo azul suave */
-.service-card:hover {
-  background: var(--oxford);
-  border-color: var(--oxford);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(1, 41, 81, 0.2);
-}
 
-/* TÍTULO blanco en hover */
-.service-card:hover h3 {
-  color: #fff;
-}
 
-/* DESCRIPCIÓN blanca en hover */
-.service-card:hover p {
-  color: rgba(255,255,255,0.9);
-}
-
-/* ICONO blanco (invertimos colores) */
-.service-card:hover .service-icon img {
-  filter: brightness(0) invert(1); /* convierte PNG negro a blanco */
-  transform: scale(1.06);
-  opacity: 1;
-  transition: transform 0.35s ease, filter 0.35s ease;
-}
 
 
 /* ===================== PROYECTOS ===================== */
@@ -1200,17 +1167,7 @@ figure { margin: 0; }                 /* evita el margen por defecto del <figure
   transform: translateY(0);
 }
 
-/* Icono de Comercial ligeramente más grande y mejor alineado */
-.service-card .service-icon img[src*="comercial"] {
-  width: 76px;
-  height: 76px;
-  transform: translateX(-6px); /* lo sube ligeramente para alinearlo */
-}
 
-/* Hover: mantiene misma alineación + zoom suave */
-.service-card:hover .service-icon img[src*="comercial"] {
-  transform: translateX(-6px) scale(1.06);
-}
 
 .back-to-top {
   display: inline-block;
