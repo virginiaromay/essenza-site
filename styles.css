@@ -288,7 +288,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   background:#fff;
 
   box-shadow:
-    0 8px 20px rgba(0,0,0,.05),
+    0 6px 16px rgba(0,0,0,.05),
     inset 0 0 0 1px rgba(0,0,0,.04);
 
   text-decoration:none;
@@ -307,11 +307,12 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 }
 
 .service-card:hover{
-  transform:translateY(-2px);
+  transform: translateY(-2px);
   box-shadow:
-    0 10px 26px rgba(0,0,0,.06),
-    inset 0 0 0 1px rgba(0,0,0,.06);
+    0 10px 24px rgba(0,0,0,0.08),  /* ← sombra gris externa */
+    inset 0 0 0 1px rgba(0,0,0,0.05);
 }
+
 
 .service-icon img{
   width:56px;
