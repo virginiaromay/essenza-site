@@ -1338,3 +1338,38 @@ body main {
   transform: translateY(0);
 }
 
+
+
+/* SERVICIOS · MOBILE (TEST) */
+@media (max-width: 600px){
+  .services-grid{
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .services-grid .service-card{
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 1.25rem 1.25rem;
+    border-radius: 12px;
+  }
+
+  .service-icon img{
+    width: 48px;
+    height: 48px;
+  }
+
+  .service-text h3{
+    font-size: 1.02rem;
+  }
+
+  .service-text p{
+    font-size: .84rem;
+    line-height: 1.55;
+    max-width: 30ch;
+  }
+
+  .service-cta{
+    font-size: .76rem;
+  }
+}
