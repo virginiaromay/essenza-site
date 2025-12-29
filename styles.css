@@ -397,8 +397,98 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   .service-text p{ font-size:.84rem; max-width:30ch; }
   .service-cta{ font-size:.76rem; }
 }
+/* ===================== PROYECTOS · ESSENZA HOVER ===================== */
 
-/* ===================== PROYECTOS ===================== */
+/* Tile base */
+.gallery .tile{
+  position: relative;
+  border-radius: 10px;                 /* coherente con servicios */
+  overflow: hidden;
+  background: #fff;
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.05),
+    inset 0 0 0 1px rgba(0,0,0,0.04);
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+/* Imagen */
+.gallery .tile img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform .6s ease;
+}
+
+/* Hover: eleva + sombra un poco más */
+.gallery .tile:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.08),
+    inset 0 0 0 1px rgba(0,0,0,0.06);
+}
+
+/* Zoom muy sutil (editorial, no “efecto” exagerado) */
+.gallery .tile:hover img{
+  transform: scale(1.02);
+}
+
+/* Overlay / Caption */
+.gallery .tile .caption{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.1rem;
+
+  /* overlay más elegante (de abajo hacia arriba) */
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.18),
+    rgba(0,0,0,0.00)
+  );
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+/* Activa overlay */
+.gallery .tile:hover .caption{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Texto overlay */
+.gallery .tile .caption h3,
+.gallery .tile .caption p{
+  color: #fff;
+  margin: 0;
+}
+
+.gallery .tile .caption h3{
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.gallery .tile .caption p{
+  margin-top: .25rem;
+  font-size: .85rem;
+  opacity: .9;
+}
+
+/* Accesibilidad: hover también en teclado */
+.gallery .tile:focus-within{
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.08),
+    inset 0 0 0 1px rgba(0,0,0,0.06);
+}
+
+/* ===================== PROYECTOS ===================== LO VIEJO
 .filters{ display:flex; gap:.6rem; margin-bottom:1rem; flex-wrap:wrap; }
 
 .chip{
@@ -481,7 +571,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   opacity: 1;
   transform: none;
 }
-
+*/
 /* Respeta usuarios con “reducir movimiento” */
 @media (prefers-reduced-motion: reduce){
   .gallery .tile img,
