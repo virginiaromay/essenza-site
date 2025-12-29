@@ -372,6 +372,18 @@ h3 { font-weight: 300; font-size: 1.1rem }
   transform: translateX(-6px) scale(1.06);
 }
 
+.service-cta{
+  display:inline-block;
+  margin-top:.75rem;
+  font-size:.85rem;
+  color:rgba(20,20,20,.6);
+  transition:color .35s ease, transform .35s ease;
+}
+
+.service-card:hover .service-cta{
+  color:rgba(20,20,20,.85);
+  transform:translateX(2px);
+}
 
 
 
