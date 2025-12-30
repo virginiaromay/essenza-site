@@ -570,23 +570,28 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   .gallery .tile:hover img{ transform: none; }
 }
 
-/* ===================== PROYECTOS · ANIMACIÓN FILTRO ===================== */
+/* ===================== PROYECTOS · FILTRO ANIMADO REAL ===================== */
 
-/* Estado normal */
 .gallery .tile{
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity .35s ease,
-    transform .35s ease;
+    opacity .3s ease,
+    transform .3s ease;
 }
 
-/* Cuando se ocultan por filtro */
-.gallery .tile[hidden]{
+/* animación de salida */
+.gallery .tile.is-hiding{
   opacity: 0;
   transform: translateY(6px);
   pointer-events: none;
 }
+
+/* oculto real (después de animar) */
+.gallery .tile.is-hidden{
+  display: none;
+}
+
 
 
 /* ===================== CONTACTO ===================== */
