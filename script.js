@@ -4,72 +4,64 @@ const menu = document.getElementById('menu');
 btn?.addEventListener('click', ()=>{
   const expanded = btn.getAttribute('aria-expanded') === 'true';
   btn.setAttribute('aria-expanded', String(!expanded));
-  menu.classList.toggle('show');
+  menu?.classList.toggle('show');
 });
 
 // ===================== AÑO EN FOOTER =====================
 const yearEl = document.getElementById('year');
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
-
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ===================== SCROLL SUAVE EN ANCLAS =====================
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click', e=>{
     const id = a.getAttribute('href').slice(1);
     const el = document.getElementById(id);
-    if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); menu?.classList.remove('show'); }
+    if(el){
+      e.preventDefault();
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+      menu?.classList.remove('show');
+    }
   });
 });
 
-// ===================== FILTROS DE PROYECTOS =====================
-const chips = document.querySelectorAll('.chip');
-const tiles  = document.querySelectorAll('.tile');
+// ===================== FILTROS DE PROYECTOS (FIX) =====================
+(function(){
+  const chips = document.querySelectorAll('.chip');
+  const tiles = document.querySelectorAll('.tile');
+  if(!chips.length || !tiles.length) return;
 
-chips.forEach(chip => {
-  chip.addEventListener('click', () => {
-    // UI active
-    chips.forEach(c => c.classList.remove('active'));
-    chip.classList.add('active');
+  const DURATION_MS = 450;
 
-    const filter = chip.dataset.filter;
+  chips.forEach(chip => {
+    chip.addEventListener('click', (e) => {
+      e.preventDefault();
 
-    tiles.forEach(t => {
-      const cat  = t.dataset.category;
-      const show = (filter === 'all') || (cat === filter);
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
 
-      // si clickeas rápido, limpiamos timers previos
-      if (t._hideTimer) clearTimeout(t._hideTimer);
+      const filter = chip.dataset.filter;
 
-      if (show) {
-        // 1) asegúrate que esté en layout
-        t.classList.remove('is-hidden');
-        // 2) prepárala para entrar desde "apagado"
-        t.classList.add('is-hiding');
+      tiles.forEach(t => {
+        const cat  = t.dataset.category;
+        const show = (filter === 'all') || (cat === filter);
 
-        // 3) en el siguiente frame, quita is-hiding y anima a visible
-        requestAnimationFrame(() => {
-          t.classList.remove('is-hiding');
-        });
+        if (t._hideTimer) clearTimeout(t._hideTimer);
 
-      } else {
-        // salida animada
-        t.classList.add('is-hiding');
-
-        // al terminar la transición, ocultar real
-        t._hideTimer = setTimeout(() => {
-          t.classList.add('is-hidden');
-        }, 450);
-      }
+        if (show) {
+          t.classList.remove('is-hidden');
+          t.classList.add('is-hiding');
+          requestAnimationFrame(() => t.classList.remove('is-hiding'));
+        } else {
+          t.classList.add('is-hiding');
+          t._hideTimer = setTimeout(() => {
+            t.classList.add('is-hidden');
+          }, DURATION_MS);
+        }
+      });
     });
   });
-});
+})();
 
-
-    
-  });
-});
 // ===================== HERO SLIDER (fade + autoplay) =====================
 (function(){
   const slider = document.getElementById('hero-slider');
@@ -82,17 +74,18 @@ chips.forEach(chip => {
 
   let index = 0, timer = null, AUTOPLAY_MS = 4500;
 
-  // Crear puntos
-  slides.forEach((_, i) => {
-    const b = document.createElement('button');
-    b.setAttribute('aria-label', `Ir a slide ${i+1}`);
-    b.addEventListener('click', () => goTo(i, true));
-    dotsWrap.appendChild(b);
-  });
+  if (dotsWrap) {
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', `Ir a slide ${i+1}`);
+      b.addEventListener('click', () => goTo(i, true));
+      dotsWrap.appendChild(b);
+    });
+  }
 
   function setActive(i){
     slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
-    dotsWrap.querySelectorAll('button').forEach((d, k) => d.classList.toggle('is-active', k === i));
+    dotsWrap?.querySelectorAll('button').forEach((d, k) => d.classList.toggle('is-active', k === i));
   }
 
   function goTo(i, pause=false){
@@ -113,10 +106,9 @@ chips.forEach(chip => {
     timer = setInterval(next, AUTOPLAY_MS);
   }
 
-  btnPrev.addEventListener('click', () => prev());
-  btnNext.addEventListener('click', () => next());
+  btnPrev?.addEventListener('click', () => prev());
+  btnNext?.addEventListener('click', () => next());
 
-  // swipe en móvil
   let startX = null;
   slider.addEventListener('pointerdown', e => startX = e.clientX);
   slider.addEventListener('pointerup', e => {
@@ -132,7 +124,6 @@ chips.forEach(chip => {
 
 // ===================== SERVICIOS · ACORDEÓN =====================
 const services = document.querySelectorAll('.service');
-
 if (services.length) {
   services.forEach(service => {
     const header = service.querySelector('.service-header');
@@ -141,14 +132,12 @@ if (services.length) {
     header.addEventListener('click', () => {
       const isOpen = service.classList.contains('is-open');
 
-      // Cerrar todos
       services.forEach(s => {
         s.classList.remove('is-open');
-        const btn = s.querySelector('.service-header');
-        btn?.setAttribute('aria-expanded', 'false');
+        const b = s.querySelector('.service-header');
+        b?.setAttribute('aria-expanded', 'false');
       });
 
-      // Abrir solo el que se clicó (si antes estaba cerrado)
       if (!isOpen) {
         service.classList.add('is-open');
         header.setAttribute('aria-expanded', 'true');
