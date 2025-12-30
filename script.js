@@ -39,17 +39,22 @@ chips.forEach(chip=>{
   // limpia timers previos
   if (t._hideTimer) clearTimeout(t._hideTimer);
 
-  if (show) {
-    t.classList.remove('is-hidden');
-    t.offsetHeight;
+if (show) {
+  // Mostrar en estado "apagado" (prepara fade-in)
+  t.classList.remove('is-hidden');
+  t.classList.add('is-hiding');  // entra desde opacidad 0
+
+  // Siguiente frame: activar transición hacia visible
+  requestAnimationFrame(() => {
     t.classList.remove('is-hiding');
-  } else {
-    t.classList.add('is-hiding');
-    t._hideTimer = setTimeout(() => {
-      t.classList.add('is-hidden');
-    }, 450);
-  }
-});
+  });
+
+} else {
+  t.classList.add('is-hiding');
+  t._hideTimer = setTimeout(() => {
+    t.classList.add('is-hidden');
+  }, 450);
+}
 
     
   });
