@@ -47,7 +47,7 @@ chips.forEach(chip=>{
     t.classList.add('is-hiding');
     t._hideTimer = setTimeout(() => {
       t.classList.add('is-hidden');
-    }, 300);
+    }, 450);
   }
 });
 
