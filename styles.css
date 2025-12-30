@@ -574,7 +574,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 .gallery .tile{
   opacity: 1;
   transform: translateY(0);
-  transition: opacity .3s ease, transform .3s ease;
+  transition: opacity .45s ease, transform .45s ease;
 }
 
 .gallery .tile.is-hiding{
