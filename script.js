@@ -31,11 +31,27 @@ chips.forEach(chip=>{
     chips.forEach(c=>c.classList.remove('active'));
     chip.classList.add('active');
     const filter = chip.dataset.filter;
-    tiles.forEach(t=>{
-      const cat = t.dataset.category;
-      const show = filter === 'all' || cat === filter;
-      t.hidden = !show;
-    });
+ 
+    tiles.forEach(t => {
+  const cat = t.dataset.category;
+  const show = filter === 'all' || cat === filter;
+
+  // limpia timers previos
+  if (t._hideTimer) clearTimeout(t._hideTimer);
+
+  if (show) {
+    t.classList.remove('is-hidden');
+    t.offsetHeight;
+    t.classList.remove('is-hiding');
+  } else {
+    t.classList.add('is-hiding');
+    t._hideTimer = setTimeout(() => {
+      t.classList.add('is-hidden');
+    }, 300);
+  }
+});
+
+    
   });
 });
 // ===================== HERO SLIDER (fade + autoplay) =====================
