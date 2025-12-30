@@ -25,36 +25,47 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 
 // ===================== FILTROS DE PROYECTOS =====================
 const chips = document.querySelectorAll('.chip');
-const tiles = document.querySelectorAll('.tile');
-chips.forEach(chip=>{
-  chip.addEventListener('click', ()=>{
-    chips.forEach(c=>c.classList.remove('active'));
+const tiles  = document.querySelectorAll('.tile');
+
+chips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    // UI active
+    chips.forEach(c => c.classList.remove('active'));
     chip.classList.add('active');
+
     const filter = chip.dataset.filter;
- 
+
     tiles.forEach(t => {
-  const cat = t.dataset.category;
-  const show = filter === 'all' || cat === filter;
+      const cat  = t.dataset.category;
+      const show = (filter === 'all') || (cat === filter);
 
-  // limpia timers previos
-  if (t._hideTimer) clearTimeout(t._hideTimer);
+      // si clickeas rápido, limpiamos timers previos
+      if (t._hideTimer) clearTimeout(t._hideTimer);
 
-if (show) {
-  // Mostrar en estado "apagado" (prepara fade-in)
-  t.classList.remove('is-hidden');
-  t.classList.add('is-hiding');  // entra desde opacidad 0
+      if (show) {
+        // 1) asegúrate que esté en layout
+        t.classList.remove('is-hidden');
+        // 2) prepárala para entrar desde "apagado"
+        t.classList.add('is-hiding');
 
-  // Siguiente frame: activar transición hacia visible
-  requestAnimationFrame(() => {
-    t.classList.remove('is-hiding');
+        // 3) en el siguiente frame, quita is-hiding y anima a visible
+        requestAnimationFrame(() => {
+          t.classList.remove('is-hiding');
+        });
+
+      } else {
+        // salida animada
+        t.classList.add('is-hiding');
+
+        // al terminar la transición, ocultar real
+        t._hideTimer = setTimeout(() => {
+          t.classList.add('is-hidden');
+        }, 450);
+      }
+    });
   });
+});
 
-} else {
-  t.classList.add('is-hiding');
-  t._hideTimer = setTimeout(() => {
-    t.classList.add('is-hidden');
-  }, 450);
-}
 
     
   });
