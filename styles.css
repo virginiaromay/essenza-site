@@ -709,3 +709,32 @@ body main{ padding-top: 88px; }
 
 /* Excepción: el HERO ya tiene su propio posicionamiento */
 .hero{ margin-top: 0 !important; }
+
+
+
+/* ===================== PROYECTOS · FILTRO ANIMADO (FIX) ===================== */
+/* Importante: tu JS NO usa el atributo [hidden], usa clases. Si tenías esto, bórralo o déjalo neutralizado. */
+.tile[hidden]{ display: none !important; }
+
+/* Animación controlada por clases */
+.gallery .tile{
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity .45s cubic-bezier(.2,.8,.2,1),
+    transform .45s cubic-bezier(.2,.8,.2,1);
+}
+
+.gallery .tile.is-hiding{
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+.gallery .tile.is-hidden{
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
