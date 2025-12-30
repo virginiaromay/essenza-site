@@ -584,9 +584,32 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   pointer-events: none;
 }
 
-.gallery .tile.is-hidden{
-  display: none;
+/* ===================== PROYECTOS · FILTRO ANIMADO SUAVE ===================== */
+
+.gallery .tile{
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity .45s cubic-bezier(.2,.8,.2,1),
+    transform .45s cubic-bezier(.2,.8,.2,1);
 }
+
+/* salida */
+.gallery .tile.is-hiding{
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+/* oculto real pero animable */
+.gallery .tile.is-hidden{
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
+
 
 
 /* ===================== CONTACTO ===================== */
