@@ -175,3 +175,25 @@
     padding: 1.4rem 1.3rem;
   }
 }
+
+/* ===== Servicios internos: elevar sin recargar ===== */
+.service-hero{
+  padding: 4.2rem 0 2.4rem;
+}
+
+.service-hero .container{
+  max-width: 980px;
+}
+
+.service-subtitle{
+  max-width: 58ch;
+}
+
+.service-hero::after{
+  content:"";
+  display:block;
+  width: 140px;
+  height: 1px;
+  background: rgba(20,20,20,.10);
+  margin: 1.6rem auto 0;
+}
