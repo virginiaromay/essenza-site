@@ -217,6 +217,96 @@
 
 @media (min-width: 1024px) {
   .service-panel {
+
+     /* =========================================
+   CÓMO TRABAJAMOS (versión editorial)
+   ========================================= */
+
+.steps-minimal{
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+
+.steps-minimal li{
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.step-num{
+  font-size: .85rem;
+  letter-spacing: .14em;
+  color: rgba(20,20,20,.50);
+  padding-top: .2rem;
+}
+
+.step-body h3{
+  margin: 0 0 .35rem;
+  font-weight: 600; /* mismo lenguaje del resto */
+  font-size: 1.05rem;
+}
+
+.step-body p{
+  margin: 0;
+  color: rgba(20,20,20,.72);
+  max-width: 70ch;
+}
+
+/* =========================================
+   IDEAL PARA TI (más liviano, menos “caja pesada”)
+   ========================================= */
+
+.fit-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.fit-card{
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.4rem 1.4rem;
+  border: 1px solid rgba(0,0,0,.04);
+  box-shadow: 0 12px 28px rgba(0,0,0,.06);
+}
+
+.fit-card h3{
+  margin: 0 0 .8rem;
+  font-size: 1.05rem;
+}
+
+.fit-list{
+  margin: 0;
+  padding-left: 1.1rem;
+  color: rgba(20,20,20,.75);
+}
+
+.fit-list li{
+  margin: .55rem 0;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 900px){
+  .fit-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px){
+  .steps-minimal li{
+    grid-template-columns: 52px 1fr;
+  }
+}
+
     transform: translateX(40px);
   }
 }
