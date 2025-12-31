@@ -1,312 +1,293 @@
-/* ======================================================
-   ESSENZA · SERVICIOS INTERNOS
-   Solo páginas internas de servicios (no home).
-   ====================================================== */
+/* ==========================================================
+   ESSENZA · SERVICE PAGES (Optimized)
+   File: /assets/css/services.css
+   Notes:
+   - Uses your global variables: --oxford, --xeketic, --azure, --radius
+   - Safe fallbacks included.
+   ========================================================== */
 
-/* =====================
-   HERO DEL SERVICIO
-   (menos plano: fondo + divisor + ancho controlado)
-   ===================== */
+:root{
+  --oxford: var(--oxford, #0b2d4f);
+  --xeketic: var(--xeketic, #140f16);
+  --azure: var(--azure, #eaf9fb);
+  --radius: var(--radius, 18px);
 
-.section {
-  padding: 2.6rem 0; 
+  --card-border: rgba(20,20,20,.08);
+  --muted: rgba(20,20,20,.70);
+  --muted-2: rgba(20,20,20,.55);
+  --shadow-sm: 0 10px 26px rgba(0,0,0,.06);
+  --shadow-md: 0 18px 44px rgba(0,0,0,.08);
 }
 
+/* Base wrapper */
+.service-page{
+  overflow-x: clip;
+}
+
+/* ==========================================================
+   HERO
+   ========================================================== */
 .service-hero{
-  padding: 5.2rem 0 2.4rem;
-  background: linear-gradient(
-    180deg,
-    rgba(197, 245, 244, 0.35) 0%,
-    rgba(255,255,255, 1) 70%
-  padding-bottom: 3.2rem
-  );
-}
-
-.service-hero .container{
-  max-width: 980px;
+  padding: 5.2rem 0 3.2rem;
+  background:
+    radial-gradient(1200px 420px at 20% 20%, rgba(11,45,79,.06), transparent 55%),
+    linear-gradient(180deg, rgba(197,245,244,.38) 0%, rgba(255,255,255,1) 70%);
+  position: relative;
 }
 
 .service-kicker{
-  margin: 0 0 .5rem;
-  font-size: .8rem;
-  letter-spacing: .14em;
+  letter-spacing: .34em;
   text-transform: uppercase;
-  color: rgba(20, 20, 20, 0.55);
+  font-size: .78rem;
+  color: rgba(20,20,20,.55);
+  margin: 0 0 .8rem;
+}
+
+.service-hero h1{
+  margin: 0 0 .7rem;
 }
 
 .service-subtitle{
-  margin-top: .3rem;
-  max-width: 58ch;
-  color: rgba(20, 20, 20, 0.72);
+  margin: 0;
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
 }
 
-.service-hero::after{
+/* subtle underline accent */
+.service-hero .container{
+  position: relative;
+}
+.service-hero .container::after{
   content:"";
   display:block;
-  width: 140px;
+  width: 160px;
   height: 1px;
-  background: rgba(20,20,20,.10);
-  margin: 1.2rem 0 0;
+  background: rgba(20,20,20,.12);
+  margin-top: 2rem;
 }
 
-
-/* =====================
-   PANEL EDITORIAL (PARA QUIÉN)
-   (esto te faltaba: tu HTML ya lo tiene)
-   ===================== */
-
+/* ==========================================================
+   Intro panel (Quién es)
+   ========================================================== */
 .service-panel{
-  background:#fff;
-  border-radius: var(--radius);
-  padding: 1.6rem 1.8rem;
-  box-shadow: 0 18px 40px rgba(0,0,0,.08);
-  border: 1px solid rgba(0,0,0,.04);
-
-  /* como en tu captura: alineado “a la derecha” y más editorial */
-  max-width: 860px;
+  background: #fff;
+  border-radius: calc(var(--radius) + 4px);
+  border: 1px solid rgba(20,20,20,.06);
+  box-shadow: var(--shadow-sm);
+  padding: 2.2rem 2.2rem;
+  max-width: 920px;
   margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.service-panel::before{
+  content:"";
+  position:absolute;
+  inset: 14px 14px auto 14px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(11,45,79,.34), rgba(11,45,79,0));
+  opacity: .65;
 }
 
 .service-panel h2{
-  margin-bottom: .6rem;
+  margin: 0 0 .7rem;
 }
-
 .service-panel p{
   margin: 0;
-  color: rgba(20,20,20,.75);
-  max-width: 70ch;
+  color: var(--muted);
 }
 
+/* ==========================================================
+   Section spacing (keeps your .section / .section-alt)
+   ========================================================== */
+.section{
+  padding: 4rem 0;
+}
+.section-alt{
+  background: var(--azure);
+}
 
-/* =====================
-   COLUMNAS (INCLUYE / NOTAS / SI-NO)
-   ===================== */
-
+/* ==========================================================
+   Qué incluye
+   ========================================================== */
 .service-columns{
   display: grid;
-  grid-template-columns: 1.3fr 0.9fr;
-  gap: 1.6rem;
+  grid-template-columns: 1.2fr .9fr;
+  gap: 2rem;
+  margin-top: 1.6rem;
   align-items: start;
 }
-
-
-/* =====================
-   LISTAS DE SERVICIO
-   ===================== */
 
 .service-list{
   margin: 0;
   padding-left: 1.1rem;
-  color: rgba(20, 20, 20, 0.75);
+  color: var(--muted);
+  line-height: 1.75;
 }
-
 .service-list li{
   margin: .55rem 0;
 }
 
-.service-list.compact li{
-  margin: .35rem 0;
-}
-
-
-/* =====================
-   CAJAS DESTACADAS (NOTA / SI / NO)
-   ===================== */
-
-.service-note,
-.service-box{
+.service-note{
   background: #fff;
-  border-radius: var(--radius);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
-  border: 1px solid rgba(0,0,0,.04);
-  padding: 1.3rem 1.3rem;
-}
-
-.service-note h3,
-.service-box h3{
-  margin-bottom: .6rem;
-}
-
-
-/* =====================
-   PASOS / METODOLOGÍA (menos plano con borde suave)
-   ===================== */
-
-.service-steps{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 1rem;
-}
-
-.service-steps li{
-  background: #fff;
-  border-radius: var(--radius);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
-  border: 1px solid rgba(0,0,0,.04);
-  padding: 1.1rem 1.2rem;
-}
-
-.step-title{
-  display: block;
-  font-weight: 600;
-}
-
-.step-desc{
-  display: block;
-  margin-top: .25rem;
-  color: rgba(20, 20, 20, 0.7);
-}
-
-
-/* =====================
-   TEXTO SUAVE / ACLARACIONES
-   ===================== */
-
-.service-muted{
-  max-width: 72ch;
-  color: rgba(20, 20, 20, 0.7);
-}
-
-
-/* =====================
-   CTA FINAL
-   ===================== */
-
-.service-cta-inner{
-  background: #fff;
-  border-radius: var(--radius);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0,0,0,.04);
+  border-radius: calc(var(--radius) + 2px);
+  border: 1px solid rgba(20,20,20,.06);
+  box-shadow: var(--shadow-sm);
   padding: 1.8rem 1.8rem;
-  text-align: center;
+}
+.service-note h3{
+  margin: 0 0 .9rem;
+  font-size: 1rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(20,20,20,.58);
+}
+.service-note p{
+  margin: 0;
+  color: rgba(20,20,20,.80);
+  font-size: 1.02rem;
+  line-height: 1.65;
 }
 
-.service-cta-inner h2{
-  margin-bottom: .4rem;
-}
-
-.service-cta-inner .btn{
-  margin-top: 1rem;
-}
-
-
-/* =====================
-   RESPONSIVE
-   ===================== */
-
-@media (max-width: 900px){
-  .service-columns{
-    grid-template-columns: 1fr;
-  }
-  .service-panel{
-    margin-left: 0;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 600px){
-  .service-hero{
-    padding: 2.8rem 0 1.8rem;
-  }
-  .service-cta-inner{
-    padding: 1.4rem 1.3rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .service-panel {
-
-     /* =========================================
-   CÓMO TRABAJAMOS (versión editorial)
-   ========================================= */
-
+/* ==========================================================
+   Steps (Cómo trabajamos)
+   ========================================================== */
 .steps-minimal{
   list-style: none;
   padding: 0;
-  margin: 1.2rem 0 0;
+  margin: 1.8rem 0 0;
   display: grid;
-  gap: 0;
-  border-top: 1px solid rgba(0,0,0,.08);
+  gap: 1.1rem;
+  max-width: 980px;
 }
-
-.steps-minimal li{
+.steps-minimal > li{
   display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 1rem;
-  padding: 1.2rem 0;
-  border-bottom: 1px solid rgba(0,0,0,.08);
+  grid-template-columns: 72px 1fr;
+  gap: 1.1rem;
+  align-items: start;
+  padding: 1.5rem 1.6rem;
+  background: #fff;
+  border: 1px solid rgba(20,20,20,.06);
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.05);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s cubic-bezier(.2,.8,.2,1);
 }
-
+.steps-minimal > li:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 44px rgba(0,0,0,.08);
+}
 .step-num{
-  font-size: .85rem;
-  letter-spacing: .14em;
-  color: rgba(20,20,20,.50);
-  padding-top: .2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(11,45,79,.08);
+  color: rgba(11,45,79,.90);
+  font-weight: 700;
+  letter-spacing: .06em;
 }
-
 .step-body h3{
   margin: 0 0 .35rem;
-  font-weight: 600; /* mismo lenguaje del resto */
+  font-weight: 600;
   font-size: 1.05rem;
 }
-
 .step-body p{
   margin: 0;
-  color: rgba(20,20,20,.72);
-  max-width: 70ch;
+  color: var(--muted);
 }
 
-/* =========================================
-   IDEAL PARA TI (más liviano, menos “caja pesada”)
-   ========================================= */
-
+/* ==========================================================
+   Fit (Ideal / No está pensado)
+   ========================================================== */
 .fit-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
-  margin-top: 1.2rem;
+  gap: 1.4rem;
+  margin-top: 1.6rem;
 }
 
 .fit-card{
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 1.4rem 1.4rem;
-  border: 1px solid rgba(0,0,0,.04);
-  box-shadow: 0 12px 28px rgba(0,0,0,.06);
+  background: rgba(255,255,255,.80);
+  border: 1px solid rgba(20,20,20,.06);
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: var(--shadow-sm);
+  padding: 1.7rem 1.7rem;
+  backdrop-filter: blur(6px);
 }
-
 .fit-card h3{
-  margin: 0 0 .8rem;
-  font-size: 1.05rem;
+  margin: 0 0 .9rem;
+  font-size: 1rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(20,20,20,.60);
 }
 
 .fit-list{
   margin: 0;
   padding-left: 1.1rem;
-  color: rgba(20,20,20,.75);
+  color: var(--muted);
+  line-height: 1.75;
+}
+.fit-list li{ margin: .45rem 0; }
+
+/* ==========================================================
+   CTA
+   ========================================================== */
+.service-cta{
+  padding: 4.2rem 0;
+  background:
+    radial-gradient(700px 300px at 70% 20%, rgba(11,45,79,.10), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(197,245,244,.28) 100%);
+}
+.service-cta-inner{
+  background: #fff;
+  border: 1px solid rgba(20,20,20,.06);
+  border-radius: calc(var(--radius) + 6px);
+  box-shadow: var(--shadow-md);
+  padding: 2.6rem 2.4rem;
+  text-align: center;
 }
 
-.fit-list li{
-  margin: .55rem 0;
+.service-muted{
+  color: rgba(20,20,20,.68);
+  max-width: 62ch;
+  margin: .8rem auto 1.8rem;
 }
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
+/* Button polish without breaking your global .btn */
+.btn.btn-primary{
+  border-radius: 999px;
+  padding: .95rem 1.5rem;
+  box-shadow: 0 12px 26px rgba(11,45,79,.18);
+}
+.btn.btn-primary:hover{
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
 @media (max-width: 900px){
-  .fit-grid{
-    grid-template-columns: 1fr;
-  }
+  .service-hero{ padding: 4.3rem 0 2.7rem; }
+  .service-subtitle{ font-size: 1rem; }
+
+  .service-columns{ grid-template-columns: 1fr; }
+  .service-note{ order: 2; }
+
+  .fit-grid{ grid-template-columns: 1fr; }
+
+  .steps-minimal > li{ grid-template-columns: 64px 1fr; }
+  .step-num{ width: 50px; height: 50px; }
 }
 
-@media (max-width: 600px){
-  .steps-minimal li{
-    grid-template-columns: 52px 1fr;
-  }
-}
-
-    transform: translateX(40px);
-  }
+@media (max-width: 520px){
+  .section{ padding: 3.2rem 0; }
+  .service-panel{ padding: 1.6rem 1.4rem; }
+  .steps-minimal > li{ padding: 1.25rem 1.2rem; }
+  .service-cta-inner{ padding: 2.2rem 1.4rem; }
+  .service-hero .container::after{ width: 120px; }
 }
