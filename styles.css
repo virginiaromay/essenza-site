@@ -738,3 +738,183 @@ body main{ padding-top: 88px; }
   position: absolute;
   visibility: hidden;
 }
+
+/* ============ FOOTER ============ */
+
+.site-footer {
+  background: var(--oxford);
+  color: #f5f2ec;
+  padding: 4rem 3rem 2.5rem;
+}
+
+/* Contenedor centrado */
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1 1 280px;
+  max-width: 340px;
+}
+
+/* Logo */
+.footer-logo {
+  height: 44px;
+  margin-bottom: 1.2rem;
+}
+
+/* Texto */
+.footer-brand {
+  margin: 0 0 .3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.footer-text {
+  margin: 0 0 .7rem;
+  font-size: .95rem;
+  color: #f5f2ec;
+}
+
+/* Etiquetas */
+.footer-label {
+  margin-bottom: .7rem;
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.footer-tag {
+  color: #d6ccbe;
+  font-size: .75rem;
+  letter-spacing: .1em;
+}
+
+/* Redes */
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  margin: .6rem 0 1rem;
+}
+
+.footer-social img {
+  width: 22px;
+  height: 22px;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+.footer-social:hover img {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+/* Links de texto (whatsapp y correo) */
+.footer-link {
+  color: #f5f2ec !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  transition: opacity .25s ease;
+}
+
+.footer-link:hover {
+  opacity: .8;
+}
+
+/* Botón CTA */
+.footer-cta {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  background: #f5f2ec;
+  color: var(--oxford) !important;  /* 🔵 azul Essenza */
+  font-size: 0.95rem;
+  font-weight: 700;                 /* negrita */
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease,
+              transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.footer-cta:hover {
+  background: #ffffff;
+  color: var(--oxford) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Copy: centrado al ancho del contenido */
+.footer-copy {
+  margin-top: 2.8rem;
+  font-size: .8rem;
+  color: #d6ccbe;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Flecha lateral IR ARRIBA */
+.scroll-up {
+  position: fixed;
+  right: 2rem;
+  bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #d6ccbe;
+  font-size: .8rem;
+  letter-spacing: .15em;
+  writing-mode: vertical-rl;
+  text-decoration: none;
+}
+
+.scroll-up-arrow {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.scroll-up:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 720px) {
+  .footer-grid {
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .footer-copy {
+    text-align: -webkit-center;
+      }
+}
+.footer-social img {
+  filter: invert(1);
+}
+
+
+@media (max-width: 720px) {
+  .site-footer {
+    padding: 3rem 1.8rem 2rem;   /* ← padding lateral para mobile */
+  }
+
+  .footer-grid {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
+  .footer-copy {
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;         /* mejor lectura en móvil */
+  }
+}
