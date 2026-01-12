@@ -16,18 +16,21 @@
   <!-- HEADER (usa el mismo include que el resto del sitio) -->
   <header class="site-header">
     <div class="container nav">
-      <a href="/" class="logo-link">
-        <img src="../../assets/images/logo_essenza.svg" alt="Essenza Studio" class="logo">
+      <a class="logo-link" href="#inicio" aria-label="Essenza">
+        <img class="logo" src="assets/images/logo.png" alt="Essenza logo">
       </a>
-
-      <nav class="menu">
-        <a href="/#servicios">Servicios</a>
-        <a href="/#proyectos">Proyectos</a>
-        <a href="/contacto/" class="btn-small">Contacto</a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="menu" id="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#quienes">Quiénes somos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto" class="btn btn-small">Contacto</a>
       </nav>
+      
     </div>
   </header>
-
+  
   <main>
 
     <!-- HERO SERVICIO -->
