@@ -889,7 +889,9 @@ body main{ padding-top: 88px; }
 }
 
 .scroll-up-arrow {
-  font-size: 1.5rem;
+  writing-mode: horizontal-tb;
+  transform: rotate(0deg);
+  font-size: 1.4rem;
   line-height: 1;
 }
 
