@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
+ <head>
+    <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Equipo · Essenza</title>
+  
+  <!-- Favicon Google Search + navegadores -->
+<link rel="icon" href="favicon.png" sizes="48x48" type="image/png">
+<link rel="icon" href="favicon.png" sizes="96x96" type="image/png">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
 
+<!-- Favicon navegador (opcional mantener el actual) -->
+<link rel="apple-touch-icon" href="assets/images/SS_oxfordblue.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=9" />
 </head>
 
 <body>
-
   <header class="site-header">
-    <!-- copia tu header del index -->
+    <div class="container nav">
+      <a class="logo-link" href="#inicio" aria-label="Essenza">
+        <img class="logo" src="../assets/images/logo.png" alt="Essenza logo">
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="menu" id="menu">
+        <a href="inicio">Inicio</a>
+        <a href="quienes">Equipo</a>
+        <a href="servicios">Servicios</a>
+        <a href="proyectos">Proyectos</a>
+        <a href="contacto" class="btn btn-small">Contacto</a>
+      </nav>
+      
+    </div>
   </header>
 
   <main>
@@ -43,11 +63,76 @@
 
   </main>
 
-  <footer>
-    <!-- copia tu footer -->
-  </footer>
+      <footer id="contacto" class="site-footer">
+  <div class="footer-grid">
+
+    <!--  COL 1: Logo + descripción + redes -->
+    <div class="footer-col">
+
+      <img src="assets/images/essenza_babypowder.png" 
+           alt="Essenza Studio" 
+           class="footer-logo">
+
+      <p class="footer-brand">ESSENZA STUDIO</p>
+      <p class="footer-text">Estudio de diseño interior.</p>
+
+         </div>
+
+
+
+    <!--  COL 2: CONTACTO  -->
+    <div class="footer-col">
+
+       <!-- Redes 2 arriba del texto -->
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/ss_essenza" class="footer-social" target="_blank">
+          <img src="../assets/icons/instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://wa.me/56948447832" class="footer-social" target="_blank">
+          <img src="../assets/icons/whatsapp.png" alt="WhatsApp">
+        </a>
+
+        <a href="mailto:hola@essenzastudio.cl" class="footer-social" target="_blank">
+          <img src="../assets/icons/correo.png" alt="Correo">
+        </a>
+      </div>
+
+      <p class="footer-text">
+        <span class="footer-tag">WHATSAPP</span><br>
+        <a href="https://wa.me/56948447832" class="footer-link">+56 9 4844 7832</a>
+      </p>
+
+      <p class="footer-text">
+        <span class="footer-tag">CORREO</span><br>
+        <a href="mailto:hola@essenzastudio.cl" class="footer-link">hola@essenzastudio.cl</a>
+      </p>
+    </div>
+
+
+
+    <!--  COL 3: CTA  -->
+    <div class="footer-col">
+      <p class="footer-label">¿TIENES MÁS PREGUNTAS?</p>
+
+      <a href="/contacto/" class="footer-cta">Contáctanos</a>
+    </div>
+  </div>
+
+
+  <p class="footer-copy">
+    © 2025 Essenza Studio. Todos los derechos reservados.
+  </p>
+
+  <!-- Flecha -->
+  <a href="#inicio" class="scroll-up" aria-label="Ir arriba">
+    <span class="scroll-up-text">IR ARRIBA</span>
+    <span class="scroll-up-arrow">⇡</span>
+  </a>
+</footer>
+
+  </main>
 
   <script src="../script.js"></script>
-
 </body>
 </html>
