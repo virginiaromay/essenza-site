@@ -28,7 +28,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="contact-page">
     <section class="section">
       <div class="container" style="max-width: 680px;">
 
@@ -43,20 +43,22 @@
         <!-- FORMULARIO CORRECTO (sin action ni method) -->
         <form id="contact-form" class="contact-form">
 
-          <label>
-            Nombre
-            <input type="text" name="nombre" required>
-          </label>
+         <div class="row-3">
+        <label>
+        Nombre
+        <input type="text" name="nombre" required>
+        </label>
 
-          <label>
-            Email
-            <input type="email" name="email" required>
-          </label>
+        <label>
+        Email
+        <input type="email" name="email" required>
+        </label>
 
-          <label>
-            Teléfono
-            <input type="text" name="telefono">
-          </label>
+        <label>
+         Teléfono
+          <input type="text" name="telefono">
+        </label>
+        </div>
 
           <label>
             ¿Qué tipo de proyecto tienes?
@@ -72,7 +74,7 @@
 
           <label>
             Cuéntanos un poco más
-            <textarea name="mensaje" rows="5" required
+            <textarea name="mensaje" rows="3" required
               placeholder="Metros aprox, ambientes, estilo que te gusta, ciudad, etc."></textarea>
           </label>
 
@@ -87,9 +89,6 @@
       </div>
     </section>
   </main>
-
-  <!-- Script principal del sitio -->
-  <script src="../script.js"></script>
 
   <!-- Script del formulario -->
   <script src="../script.js"></script>
