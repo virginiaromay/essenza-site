@@ -742,7 +742,13 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   }
 }
 
+.contact-page {
+  padding-top: 88px;   /* misma altura aprox del header */
+}
 
+.contact-page .section {
+  padding: 2rem 0 1.5rem;
+}
 
 /* ===================== PROYECTOS · FILTRO ANIMADO (FIX) ===================== */
 /* Importante: tu JS NO usa el atributo [hidden], usa clases. Si tenías esto, bórralo o déjalo neutralizado. */
