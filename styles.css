@@ -1052,7 +1052,7 @@ body main{ padding-top: 0px; }
 .about-page .split {
   align-items: center;
   min-height: calc(100vh - 88px);
-  gap: 3rem;
+  gap: 1rem;
 }
 
 /* COLUMNA TEXTO */
