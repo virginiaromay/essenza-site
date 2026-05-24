@@ -1160,3 +1160,97 @@ h3{ font-weight: 300; font-size: 1.1rem; }
     max-height: 420px;
   }
 }
+
+
+/* ===================== NOSOTRAS AJUSTE FINAL ===================== */
+
+.about-page .section {
+  padding: 2.5rem 0;
+}
+
+.about-page .split {
+  grid-template-columns: 0.9fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1050px;
+}
+
+/* Bloque de texto más compacto */
+.about-page .split > div:first-child {
+  max-width: 500px;
+  text-align: left;
+  justify-self: end;
+}
+
+/* Párrafos alineados izquierda y más controlados */
+.about-page .split > div:first-child p,
+.about-page .split > div:first-child .lede {
+  text-align: left !important;
+  max-width: 440px;
+  margin: 0 0 0.85rem 0;
+  line-height: 1.55;
+}
+
+/* Encabezado */
+.about-heading {
+  margin-bottom: 1.4rem;
+}
+
+.about-kicker {
+  display: block;
+  font-family: 'EncodeSans', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rhythm);
+  margin-bottom: 0.35rem;
+}
+
+.about-page h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  font-weight: 400;
+  line-height: 0.95;
+  margin: 0;
+  text-align: left;
+}
+
+/* Foto más cerca y contenida */
+.about-page .split > div:last-child {
+  justify-self: start;
+}
+
+.about-page .about-photo img {
+  max-height: 520px;
+  width: auto;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .about-page .split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-page .split > div:first-child {
+    justify-self: auto;
+    max-width: 100%;
+  }
+
+  .about-page .split > div:first-child p,
+  .about-page .split > div:first-child .lede {
+    max-width: 100%;
+  }
+
+  .about-page .split > div:last-child {
+    justify-self: auto;
+  }
+
+  .about-page .about-photo img {
+    width: 100%;
+    max-height: 420px;
+  }
+}
