@@ -932,12 +932,13 @@ body main{ padding-top: 0px; }
   }
 }
 
-/* ===================== HEADER PÁGINA PROYECTO ===================== */
+/* ===================== PÁGINA INDIVIDUAL DE PROYECTO ===================== */
+
+/* ===================== HEADER PROYECTO ===================== */
 
 .project-title-band {
   background: var(--oxford);
-  color: #fff;
-  min-height: 380px;
+  min-height: 340px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -945,65 +946,62 @@ body main{ padding-top: 0px; }
 
 .project-header-content {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
-/* subtítulo */
-.project-kicker {
-  margin: 0 0 1.2rem;
-  color: rgba(255,255,255,0.72);
-  font-size: 0.8rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-/* título principal */
 .project-title-band h1 {
-  margin: 0;
   color: #fff;
-  font-size: clamp(3rem, 7vw, 6.2rem);
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 300;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   line-height: 1;
 }
 
-/* año + ubicación */
 .project-meta {
-  margin-top: 1.6rem;
+  margin-top: 1.4rem;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 0.8rem;
-  color: rgba(255,255,255,0.82);
-  font-size: 0.95rem;
-  letter-spacing: 0.14em;
+  gap: .8rem;
+  color: rgba(255,255,255,.82);
+  font-size: .92rem;
+  letter-spacing: .14em;
   text-transform: uppercase;
 }
 
 .project-meta .dot {
-  opacity: 0.45;
-  font-size: 0.8rem;
+  opacity: .45;
 }
 
-/* responsive */
+
+/* Galería proyecto */
+.project-grid {
+  width: min(1200px, 92%);
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.project-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 @media (max-width: 720px) {
   .project-title-band {
-    min-height: 280px;
-    padding: 2rem 0;
+    min-height: 240px;
   }
 
-  .project-title-band h1 {
-    font-size: clamp(2.2rem, 10vw, 4rem);
+  .project-title-band .container {
+    padding: 3.5rem 0 3rem;
   }
 
-  .project-meta {
-    font-size: 0.78rem;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  .project-grid {
+    grid-template-columns: 1fr;
+    margin: 2.5rem auto;
   }
 }
