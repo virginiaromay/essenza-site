@@ -931,3 +931,66 @@ body main{ padding-top: 0px; }
     text-align: center;         /* mejor lectura en móvil */
   }
 }
+
+/* ===================== PÁGINA INDIVIDUAL DE PROYECTO ===================== */
+
+.project-title-band {
+  background: var(--oxford);
+  color: #fff;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+.project-title-band .container {
+  padding: 5rem 0 4.5rem;
+}
+
+.project-title-band h1 {
+  color: #fff;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.project-kicker {
+  margin: 0 0 1rem;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Galería proyecto */
+.project-grid {
+  width: min(1200px, 92%);
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.project-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 720px) {
+  .project-title-band {
+    min-height: 240px;
+  }
+
+  .project-title-band .container {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    margin: 2.5rem auto;
+  }
+}
