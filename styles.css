@@ -1046,3 +1046,68 @@ body main{ padding-top: 0px; }
     margin: 2.5rem auto;
   }
 }
+
+/* ===================== NOSOTRAS ===================== */
+
+/* bloque principal */
+main .split {
+  align-items: center;
+  min-height: calc(100vh - 88px);
+  gap: 3rem;
+}
+
+/* 1. texto alineado izquierda */
+main .split > div:first-child {
+  text-align: left;
+}
+
+/* título más editorial */
+main .split > div:first-child h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  text-align: left;
+  margin-top: 2rem;      /* lo baja un poco */
+  margin-bottom: 1.6rem;
+  color: var(--xeketic);
+}
+
+/* párrafos */
+main .split > div:first-child p {
+  text-align: left;
+  max-width: 560px;
+}
+
+/* 2. foto más pequeña */
+.about-photo img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+}
+
+/* que no obligue scroll innecesario */
+main .split > div:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+  main .split {
+    min-height: auto;
+    gap: 2rem;
+  }
+
+  main .split > div:first-child h2 {
+    font-size: clamp(2.2rem, 9vw, 3.4rem);
+    margin-top: 0;
+  }
+
+  .about-photo img {
+    max-height: 420px;
+  }
+}
