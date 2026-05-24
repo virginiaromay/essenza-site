@@ -938,7 +938,7 @@ body main{ padding-top: 0px; }
 
 .project-title-band {
   background: var(--oxford);
-  min-height: 300px;
+  min-height: 340px;
   display: flex;
   align-items: center;
   justify-content: center;
