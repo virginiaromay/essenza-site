@@ -1188,7 +1188,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 /* Encabezado */
 .about-heading {
-  margin-bottom: 3rem;   /* MÁS aire entre nombre y párrafos */
+  margin-bottom: 4rem;   /* MÁS aire entre nombre y párrafos */
 }
 
 .about-kicker {
