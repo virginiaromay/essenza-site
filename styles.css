@@ -1170,8 +1170,8 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 .about-page .split {
   grid-template-columns: 0.82fr 0.72fr;
-  gap: 1.4rem;
-  align-items: end;
+  gap: 1.6rem;
+  align-items: start;
   max-width: 980px;
 }
 
@@ -1184,7 +1184,10 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 /* Encabezado */
 .about-heading {
-  margin-bottom: 1.2rem;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .about-kicker {
@@ -1194,7 +1197,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--rhythm);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0;
 }
 
 .about-page h2 {
@@ -1202,7 +1205,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 400;
   line-height: 0.95;
-  margin: 0;
+  margin: 1.6rem 0 0;
   text-align: left;
   white-space: nowrap;
 }
@@ -1212,8 +1215,14 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 .about-page .split > div:first-child .lede {
   text-align: right !important;
   max-width: 360px;
-  margin: 0 0 0.65rem auto;
+  margin: 0 0 0.7rem auto;
   line-height: 1.45;
+}
+
+/* Más aire entre nombres y párrafo */
+.about-page .split > div:first-child p:first-of-type,
+.about-page .split > div:first-child .lede:first-of-type {
+  margin-top: 2rem;
 }
 
 /* Foto */
@@ -1240,6 +1249,10 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   .about-page .split > div:first-child {
     justify-self: auto;
     max-width: 100%;
+  }
+
+  .about-heading {
+    min-height: auto;
   }
 
   .about-page h2 {
