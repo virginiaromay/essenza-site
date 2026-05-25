@@ -1165,7 +1165,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 /* ===================== NOSOTRAS AJUSTE FINAL ===================== */
 
 .about-page {
-  padding-top: 88px; /* compensa header fijo */
+  padding-top: 88px;
 }
 
 .about-page .section {
@@ -1188,7 +1188,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 /* Encabezado */
 .about-heading {
-  margin-bottom: 2.2rem; /* espacio entre título y párrafos */
+  margin-bottom: 3rem;   /* MÁS aire entre nombre y párrafos */
 }
 
 .about-kicker {
@@ -1211,13 +1211,19 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   white-space: nowrap;
 }
 
-/* Párrafos más compactos y hacia la foto */
+/* Párrafos */
 .about-page .split > div:first-child p,
 .about-page .split > div:first-child .lede {
   text-align: right !important;
   max-width: 360px;
-  margin: 0 0 0.7rem auto;
+  margin: 0 0 0.8rem auto;
   line-height: 1.45;
+}
+
+/* SOLO el primer párrafo: más separación */
+.about-page .split > div:first-child p:first-of-type,
+.about-page .split > div:first-child .lede:first-of-type {
+  margin-top: 1.4rem;
 }
 
 /* Foto */
@@ -1247,6 +1253,10 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   .about-page .split > div:first-child {
     justify-self: auto;
     max-width: 100%;
+  }
+
+  .about-heading {
+    margin-bottom: 1.8rem;
   }
 
   .about-page h2 {
