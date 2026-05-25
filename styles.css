@@ -1164,13 +1164,17 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 /* ===================== NOSOTRAS AJUSTE FINAL ===================== */
 
+.about-page {
+  padding-top: 88px; /* compensa header fijo */
+}
+
 .about-page .section {
-  padding: 2.2rem 0;
+  padding: 2rem 0;
 }
 
 .about-page .split {
   grid-template-columns: 0.82fr 0.72fr;
-  gap: 1.6rem;
+  gap: 1.8rem;
   align-items: start;
   max-width: 980px;
 }
@@ -1184,10 +1188,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 /* Encabezado */
 .about-heading {
-  min-height: 210px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  margin-bottom: 2.2rem; /* espacio entre título y párrafos */
 }
 
 .about-kicker {
@@ -1197,32 +1198,26 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--rhythm);
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .about-page h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, 5vw, 4.4rem);
   font-weight: 400;
   line-height: 0.95;
-  margin: 1.6rem 0 0;
+  margin: 0;
   text-align: left;
   white-space: nowrap;
 }
 
-/* Párrafos más compactos y alineados hacia la foto */
+/* Párrafos más compactos y hacia la foto */
 .about-page .split > div:first-child p,
 .about-page .split > div:first-child .lede {
   text-align: right !important;
   max-width: 360px;
   margin: 0 0 0.7rem auto;
   line-height: 1.45;
-}
-
-/* Más aire entre nombres y párrafo */
-.about-page .split > div:first-child p:first-of-type,
-.about-page .split > div:first-child .lede:first-of-type {
-  margin-top: 2rem;
 }
 
 /* Foto */
@@ -1240,19 +1235,18 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 /* Mobile */
 @media (max-width: 900px) {
+  .about-page {
+    padding-top: 80px;
+  }
+
   .about-page .split {
     grid-template-columns: 1fr;
     gap: 2rem;
-    align-items: center;
   }
 
   .about-page .split > div:first-child {
     justify-self: auto;
     max-width: 100%;
-  }
-
-  .about-heading {
-    min-height: auto;
   }
 
   .about-page h2 {
