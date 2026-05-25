@@ -1171,24 +1171,28 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 .about-page .split {
   grid-template-columns: 0.9fr 0.8fr;
   gap: 2rem;
-  align-items: center;
+  align-items: stretch;
   max-width: 1050px;
 }
 
 /* Bloque de texto más compacto */
 .about-page .split > div:first-child {
-  max-width: 500px;
+  max-width: 480px;
   text-align: left;
   justify-self: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;   /* baja el contenido */
+  height: 100%;
 }
 
-/* Párrafos alineados izquierda y más controlados */
+/* Párrafos alineados derecha y más controlados */
 .about-page .split > div:first-child p,
 .about-page .split > div:first-child .lede {
   text-align: right !important;
-  max-width: 440px;
-  margin: 0 0 0.85rem 0;
-  line-height: 1.55;
+  max-width: 390px;     /* antes 440 */
+  margin: 0 0 0.75rem auto;   /* empuja a la derecha */
+  line-height: 1.5;
 }
 
 /* Encabezado */
