@@ -1165,39 +1165,26 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 /* ===================== NOSOTRAS AJUSTE FINAL ===================== */
 
 .about-page .section {
-  padding: 2.5rem 0;
+  padding: 2.2rem 0;
 }
 
 .about-page .split {
-  grid-template-columns: 0.9fr 0.8fr;
-  gap: 2rem;
-  align-items: stretch;
-  max-width: 1050px;
+  grid-template-columns: 0.82fr 0.72fr;
+  gap: 1.4rem;
+  align-items: end;
+  max-width: 980px;
 }
 
-/* Bloque de texto más compacto */
+/* Columna de texto */
 .about-page .split > div:first-child {
-  max-width: 480px;
-  text-align: left;
+  max-width: 500px;
   justify-self: end;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;   /* baja el contenido */
-  height: 100%;
-}
-
-/* Párrafos alineados derecha y más controlados */
-.about-page .split > div:first-child p,
-.about-page .split > div:first-child .lede {
-  text-align: right !important;
-  max-width: 390px;     /* antes 440 */
-  margin: 0 0 0.75rem auto;   /* empuja a la derecha */
-  line-height: 1.5;
+  text-align: left;
 }
 
 /* Encabezado */
 .about-heading {
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.2rem;
 }
 
 .about-kicker {
@@ -1212,14 +1199,24 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 .about-page h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 5vw, 4.8rem);
+  font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 400;
   line-height: 0.95;
   margin: 0;
   text-align: left;
+  white-space: nowrap;
 }
 
-/* Foto más cerca y contenida */
+/* Párrafos más compactos y alineados hacia la foto */
+.about-page .split > div:first-child p,
+.about-page .split > div:first-child .lede {
+  text-align: right !important;
+  max-width: 360px;
+  margin: 0 0 0.65rem auto;
+  line-height: 1.45;
+}
+
+/* Foto */
 .about-page .split > div:last-child {
   justify-self: start;
 }
@@ -1237,6 +1234,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   .about-page .split {
     grid-template-columns: 1fr;
     gap: 2rem;
+    align-items: center;
   }
 
   .about-page .split > div:first-child {
@@ -1244,9 +1242,15 @@ h3{ font-weight: 300; font-size: 1.1rem; }
     max-width: 100%;
   }
 
+  .about-page h2 {
+    white-space: normal;
+  }
+
   .about-page .split > div:first-child p,
   .about-page .split > div:first-child .lede {
+    text-align: left !important;
     max-width: 100%;
+    margin-left: 0;
   }
 
   .about-page .split > div:last-child {
