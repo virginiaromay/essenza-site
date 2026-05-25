@@ -1185,7 +1185,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 /* Párrafos alineados izquierda y más controlados */
 .about-page .split > div:first-child p,
 .about-page .split > div:first-child .lede {
-  text-align: left !important;
+  text-align: right !important;
   max-width: 440px;
   margin: 0 0 0.85rem 0;
   line-height: 1.55;
