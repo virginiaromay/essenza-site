@@ -1094,94 +1094,6 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 /* ===================== NOSOTRAS ===================== */
 
-.about-page .split {
-  align-items: center;
-  min-height: calc(100vh - 88px);
-  gap: 1rem;
-}
-
-/* COLUMNA TEXTO */
-.about-page .split > div:first-child {
-  text-align: left;
-}
-
-/* ---- encabezado ---- */
-.about-heading {
-  margin-bottom: 1.8rem;
-}
-
-/* SOMOS */
-.about-kicker {
-  display: block;
-  font-family: 'EncodeSans', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 300;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--rhythm);
-  margin-bottom: 0.4rem;
-}
-
-/* Laura y Virginia */
-.about-page .split > div:first-child h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 5vw, 4.8rem);
-  font-weight: 400;
-  line-height: 0.95;
-  text-align: left;
-  margin: 0;
-  color: var(--xeketic);
-}
-
-/* PÁRRAFOS */
-.about-page .split > div:first-child p,
-.about-page .split > div:first-child .lede {
-  text-align: right !important;
-  max-width: 560px;
-  margin-left: 0;
-  margin-right: 0;
-  line-height: 1.75;
-}
-
-/* FOTO */
-.about-page .about-photo img {
-  width: 100%;
-  max-height: 520px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 0px;
-}
-
-/* centra foto dentro de su columna */
-.about-page .split > div:last-child {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-  .about-page .split {
-    min-height: auto;
-    gap: 2rem;
-  }
-
-  .about-page .split > div:first-child h2 {
-    font-size: clamp(2.3rem, 10vw, 3.8rem);
-  }
-
-  .about-kicker {
-    font-size: 0.72rem;
-  }
-
-  .about-page .about-photo img {
-    max-height: 420px;
-  }
-}
-
-
-/* ===================== NOSOTRAS AJUSTE FINAL ===================== */
-
 .about-page {
   padding-top: 88px;
 }
@@ -1206,7 +1118,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 /* Encabezado */
 .about-heading {
-  margin-bottom: 4rem;   /* MÁS aire entre nombre y párrafos */
+  margin-bottom: 4rem;
 }
 
 .about-kicker {
@@ -1219,6 +1131,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   margin-bottom: 1rem;
 }
 
+/* Laura y Virginia */
 .about-page h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3rem, 5vw, 4.4rem);
@@ -1238,7 +1151,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   line-height: 1.45;
 }
 
-/* SOLO el primer párrafo: más separación */
+/* Separación extra antes del primer párrafo */
 .about-page .split > div:first-child p:first-of-type,
 .about-page .split > div:first-child .lede:first-of-type {
   margin-top: 1.4rem;
@@ -1254,7 +1167,8 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   width: auto;
   max-width: 100%;
   object-fit: cover;
-  border-radius: 14px;
+  object-position: center;
+  border-radius: 0;
 }
 
 /* Mobile */
@@ -1283,7 +1197,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
   .about-page .split > div:first-child p,
   .about-page .split > div:first-child .lede {
-    text-align: left !important;
+    text-align: right !important;
     max-width: 100%;
     margin-left: 0;
   }
