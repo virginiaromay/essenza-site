@@ -93,7 +93,13 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   padding: .7rem 0;
 }
 
-.logo{ height: 34px; display: block; }
+.logo {
+  height: 34px;
+  width: auto;         /* mantiene proporción */
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;      /* evita que se aplaste */
+}
 .logo-link{ display: inline-flex; align-items: center; }
 
 .menu{ display: flex; gap: 1rem; align-items: center; }
@@ -388,6 +394,18 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 /* ===================== SERVICIOS · RESPONSIVE ===================== */
 @media (max-width:900px){
   .services-grid{ gap:1.2rem; }
+}
+.logo {
+  height: 28px;   /* un poco más pequeño */
+  width: auto;
+}
+
+.logo-link {
+  flex-shrink: 0;
+}
+
+.nav {
+  min-height: 64px;
 }
 
 @media (max-width:600px){
@@ -1131,7 +1149,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   max-height: 520px;
   object-fit: cover;
   object-position: center;
-  border-radius: 14px;
+  border-radius: 0px;
 }
 
 /* centra foto dentro de su columna */
