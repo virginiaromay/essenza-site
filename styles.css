@@ -488,7 +488,6 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 .gallery .tile{
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius);
   aspect-ratio: 16 / 10;
   background: #fff;
 
@@ -575,6 +574,11 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   letter-spacing: .6px;
   text-transform: uppercase;
   opacity: .95;
+}
+
+.gallery .tile:hover .caption span,
+.gallery .tile:hover .caption h3{
+  font-weight: 700;
 }
 
 .gallery .tile .caption p{
