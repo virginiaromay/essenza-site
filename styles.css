@@ -117,7 +117,8 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 /* Botón de Contacto en el menú — versión sin borde en estado normal */
 .menu a.btn-small{
-  padding: .45rem .9rem;
+  padding: 0;
+  font-size: .98rem;
   border-radius: 999px;
   background: transparent;
   border: 1px solid transparent;
