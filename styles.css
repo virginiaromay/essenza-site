@@ -1015,6 +1015,16 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   font-size: .8rem;
 }
 
+/* ciudad, debajo de la comuna */
+.project-location {
+  margin-top: .4rem;
+  text-align: center;
+  color: rgba(250,250,245,.55);
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
 /* móvil */
 @media (max-width: 720px) {
   .project-title-band {
@@ -1034,6 +1044,10 @@ h3{ font-weight: 300; font-size: 1.1rem; }
     flex-wrap: wrap;
     gap: .5rem;
     font-size: .8rem;
+  }
+
+  .project-location {
+    font-size: .7rem;
   }
 }
 
