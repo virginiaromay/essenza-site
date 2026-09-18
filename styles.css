@@ -124,22 +124,13 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   color: var(--xeketic) !important;
   font-weight: 400;
   text-decoration: none;
-  transition:
-    background-color .3s ease,
-    color .3s ease,
-    border-color .3s ease,
-    box-shadow .3s ease,
-    transform .3s ease;
 }
 
-/* Hover elegante */
 .menu a.btn-small:hover{
   background: var(--oxford);
   border-color: var(--oxford);
   color: #fff !important;
   font-weight: 600;
-  box-shadow: 0 8px 18px rgba(1, 41, 81, 0.25);
-  transform: translateY(-1px);
 }
 
 /* ===================== HERO OVERLAY ===================== */
