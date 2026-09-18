@@ -28,6 +28,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 (function(){
   const chips = document.querySelectorAll('.chip');
   const tiles = document.querySelectorAll('.tile');
+  const gallery = document.getElementById('gallery');
   if(!chips.length || !tiles.length) return;
 
   const DURATION_MS = 450;
@@ -40,6 +41,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
       chip.classList.add('active');
 
       const filter = chip.dataset.filter;
+
+      // El mosaico (tamaños distintos) está diseñado para las fotos completas.
+      // Al filtrar por categoría, algunas fotos se ocultan y el mosaico dejaría
+      // espacios vacíos, así que se vuelve a una grilla pareja mientras dura el filtro.
+      gallery?.classList.toggle('is-filtered', filter !== 'all');
 
       tiles.forEach(t => {
         const cat  = t.dataset.category;
