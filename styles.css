@@ -410,43 +410,96 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 }
 /* ===================== PROYECTOS ===================== */
 
-.filters{
-  display: flex;
-  gap: .6rem;
-  margin: 1.2rem 0 1.4rem;
-  flex-wrap: wrap;
+/* Navegación por categoría: tarjetas de foto en vez de botones,
+   a todo el ancho, igual que el mosaico de la galería de abajo */
+.category-nav{
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 6px;
+  margin-top: 1.4rem;
 }
 
-.chip{
+.category-stack{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px;
+}
+
+.category-card{
+  position: relative;
+  display: block;
+  overflow: hidden;
   appearance: none;
-  background: #fff;
-  color: var(--xeketic);
-  border: 1px solid #e6e2de;
-  border-radius: 18px;
-  padding: .55rem .9rem;
-  font: inherit;
+  padding: 0;
+  border: 0;
   cursor: pointer;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-  transition:
-    background-color .25s ease,
-    box-shadow .25s ease,
-    transform .25s ease,
-    border-color .25s ease,
-    color .25s ease;
+  min-height: 190px;
+  font: inherit;
 }
 
-.chip:hover{
-  background: #faf9f7;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+.category-card--big{
+  min-height: 100%;
 }
 
-.chip.active{
-  background: rgba(1,41,81,0.92);
+.category-card img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.category-card:hover img{
+  transform: scale(1.03);
+}
+
+.category-card span{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.1rem;
   color: #fff;
-  border-color: var(--oxford);
-  box-shadow: 0 8px 18px rgba(1,41,81,0.18);
+  font-family: 'HelveticaNowDisplay', system-ui, sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-weight: 300;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.15) 55%,
+    rgba(0,0,0,0.05)
+  );
+}
+
+.category-card--big span{
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  padding: 1.6rem;
+}
+
+.category-card.active span{
+  font-weight: 700;
+}
+
+.category-card.active{
+  box-shadow: inset 0 0 0 3px var(--oxford);
+}
+
+@media (max-width: 900px){
+  .category-card{ min-height: 150px; }
+}
+
+@media (max-width: 560px){
+  .category-nav{
+    grid-template-columns: 1fr;
+  }
+  .category-card--big{
+    min-height: 220px;
+    order: -1;
+  }
 }
 
 .gallery{

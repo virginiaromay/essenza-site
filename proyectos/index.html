@@ -13,7 +13,7 @@
 <!-- Favicon navegador (opcional mantener el actual) -->
 <link rel="apple-touch-icon" href="../assets/images/SS_oxfordblue.png">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=15" />
+  <link rel="stylesheet" href="../styles.css?v=16" />
 </head>
 
 <body>
@@ -43,12 +43,23 @@
 <section class="section">
   <div class="container">
     <h2>Proyectos</h2>
+  </div>
 
-    <div class="filters" role="tablist">
-      <button class="chip active" data-filter="all">Todos</button>
-      <button class="chip" data-filter="residencial">Residencial</button>
-      <button class="chip" data-filter="comercial">Comercial</button>
+  <div class="category-nav" role="tablist">
+    <div class="category-stack">
+      <button class="category-card filter-trigger" data-filter="comercial" role="tab" aria-selected="false">
+        <img src="../proyectos/alma/cover.jpg" alt="">
+        <span>Proyectos Comerciales</span>
+      </button>
+      <button class="category-card filter-trigger" data-filter="residencial" role="tab" aria-selected="false">
+        <img src="../proyectos/el-bosque/cover.jpg" alt="">
+        <span>Proyectos Residenciales</span>
+      </button>
     </div>
+    <button class="category-card category-card--big filter-trigger active" data-filter="all" role="tab" aria-selected="true">
+      <img src="../assets/images/hero/Marcos-(1).jpg" alt="">
+      <span>Ver galería de proyectos</span>
+    </button>
   </div>
 
   <div class="grid gallery gallery-mosaic" id="gallery">

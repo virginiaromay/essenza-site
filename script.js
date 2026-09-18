@@ -26,7 +26,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 
 // ===================== FILTROS DE PROYECTOS (FIX) =====================
 (function(){
-  const chips = document.querySelectorAll('.chip');
+  const chips = document.querySelectorAll('.filter-trigger');
   const tiles = document.querySelectorAll('.tile');
   const gallery = document.getElementById('gallery');
   if(!chips.length || !tiles.length) return;
@@ -37,8 +37,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     chip.addEventListener('click', (e) => {
       e.preventDefault();
 
-      chips.forEach(c => c.classList.remove('active'));
+      chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-selected', 'false'); });
       chip.classList.add('active');
+      chip.setAttribute('aria-selected', 'true');
 
       const filter = chip.dataset.filter;
 
