@@ -6,14 +6,6 @@
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: 'EncodeSans';
-  src: url('assets/fonts/EncodeSans-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* Palabras clave con voz editorial */
 .emphasis{
   font-family: 'Cormorant Garamond', serif;
@@ -47,7 +39,7 @@ html, body{
 }
 
 body{
-  font-family: 'EncodeSans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: 'HelveticaNowDisplay', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--xeketic);
   line-height: 1.65;
 }
@@ -61,7 +53,7 @@ img, video{
 figure{ margin: 0; }
 
 h1, h2, h3{
-  font-family: 'HelveticaNowDisplay','EncodeSans',system-ui,sans-serif;
+  font-family: 'HelveticaNowDisplay',system-ui,sans-serif;
   letter-spacing: .2px;
   color: var(--xeketic);
   margin: 0 0 .5rem;
@@ -382,7 +374,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 
 .service-label{
-  font-family: 'HelveticaNowDisplay','EncodeSans',system-ui,sans-serif;
+  font-family: 'HelveticaNowDisplay',system-ui,sans-serif;
   font-size: .8rem;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -556,7 +548,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 .gallery .tile .caption span,
 .gallery .tile .caption h3{
-  font-family: 'HelveticaNowDisplay','EncodeSans',system-ui,sans-serif;
+  font-family: 'HelveticaNowDisplay',system-ui,sans-serif;
   font-weight: 300;
   font-size: clamp(1rem, 1.4vw, 1.15rem);
   letter-spacing: .6px;
@@ -712,7 +704,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   justify-self: start;
   margin-top: .2rem;
   padding: .58rem 1.1rem;
-  font-family: 'EncodeSans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: 'HelveticaNowDisplay', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-size: .9rem;
   font-weight: 600;
   letter-spacing: .04em;
@@ -1123,7 +1115,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 .about-kicker {
   display: block;
-  font-family: 'EncodeSans', sans-serif;
+  font-family: 'HelveticaNowDisplay', sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
