@@ -547,15 +547,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
     rgba(0,0,0,0.00)
   );
 
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity .35s ease, transform .35s ease;
-}
-
-.gallery .tile:hover .caption,
-.gallery .tile:focus-within .caption{
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* Texto del overlay: soporta span (tu HTML) y también h3/p (por si lo cambias) */
@@ -592,8 +584,6 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   outline: none;
 }
 .gallery .tile .project-link:focus-visible .caption{
-  opacity: 1;
-  transform: translateY(0);
   outline: 2px solid #fff;
   outline-offset: -6px;
 }
