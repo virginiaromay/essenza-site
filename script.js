@@ -24,51 +24,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-// ===================== FILTROS DE PROYECTOS (FIX) =====================
-(function(){
-  const chips = document.querySelectorAll('.filter-trigger');
-  const tiles = document.querySelectorAll('.tile');
-  const gallery = document.getElementById('gallery');
-  if(!chips.length || !tiles.length) return;
-
-  const DURATION_MS = 450;
-
-  chips.forEach(chip => {
-    chip.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-selected', 'false'); });
-      chip.classList.add('active');
-      chip.setAttribute('aria-selected', 'true');
-
-      const filter = chip.dataset.filter;
-
-      // El mosaico (tamaños distintos) está diseñado para las fotos completas.
-      // Al filtrar por categoría, algunas fotos se ocultan y el mosaico dejaría
-      // espacios vacíos, así que se vuelve a una grilla pareja mientras dura el filtro.
-      gallery?.classList.toggle('is-filtered', filter !== 'all');
-
-      tiles.forEach(t => {
-        const cat  = t.dataset.category;
-        const show = (filter === 'all') || (cat === filter);
-
-        if (t._hideTimer) clearTimeout(t._hideTimer);
-
-        if (show) {
-          t.classList.remove('is-hidden');
-          t.classList.add('is-hiding');
-          requestAnimationFrame(() => t.classList.remove('is-hiding'));
-        } else {
-          t.classList.add('is-hiding');
-          t._hideTimer = setTimeout(() => {
-            t.classList.add('is-hidden');
-          }, DURATION_MS);
-        }
-      });
-    });
-  });
-})();
-
 // ===================== HERO SLIDER (fade + autoplay) =====================
 (function(){
   const slider = document.getElementById('hero-slider');

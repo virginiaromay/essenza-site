@@ -480,14 +480,6 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   padding: 1.6rem;
 }
 
-.category-card.active span{
-  font-weight: 700;
-}
-
-.category-card.active{
-  box-shadow: inset 0 0 0 3px var(--oxford);
-}
-
 @media (max-width: 900px){
   .category-card{ min-height: 150px; }
 }
@@ -518,22 +510,6 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 .tile--big{ grid-column: span 2; grid-row: span 2; }
 .tile--wide{ grid-column: span 2; grid-row: span 1; }
 .tile--full{ grid-column: 1 / -1; grid-row: span 1; }
-
-/* Al filtrar por categoría el mosaico se vuelve una grilla pareja,
-   para no dejar espacios vacíos con menos fotos */
-.gallery-mosaic.is-filtered{
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: auto;
-}
-.gallery-mosaic.is-filtered .tile{
-  aspect-ratio: 16 / 10;
-}
-.gallery-mosaic.is-filtered .tile--big,
-.gallery-mosaic.is-filtered .tile--wide,
-.gallery-mosaic.is-filtered .tile--full{
-  grid-column: auto;
-  grid-row: auto;
-}
 
 .tile[hidden]{ display: none; }
 
@@ -672,45 +648,6 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   .gallery .tile:hover img{ transform: none; }
 }
 
-/* ===================== PROYECTOS · FILTRO ANIMADO REAL ===================== */
-.gallery .tile{
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity .45s cubic-bezier(.2,.8,.2,1), transform .45s cubic-bezier(.2,.8,.2,1);
-
-}
-
-.gallery .tile.is-hiding{
-  opacity: 0;
-  transform: translateY(6px);
-  pointer-events: none;
-}
-
-/* ===================== PROYECTOS · FILTRO ANIMADO SUAVE ===================== */
-
-.gallery .tile{
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity .45s cubic-bezier(.2,.8,.2,1),
-    transform .45s cubic-bezier(.2,.8,.2,1);
-}
-
-/* salida */
-.gallery .tile.is-hiding{
-  opacity: 0;
-  transform: translateY(6px);
-  pointer-events: none;
-}
-
-/* oculto real pero animable */
-.gallery .tile.is-hidden{
-  opacity: 0;
-  transform: translateY(6px);
-  pointer-events: none;
-  position: absolute;
-  visibility: hidden;
-}
 
 
 
@@ -841,32 +778,6 @@ h3{ font-weight: 300; font-size: 1.1rem; }
   padding: 2rem 0 1.5rem;
 }
 
-/* ===================== PROYECTOS · FILTRO ANIMADO (FIX) ===================== */
-/* Importante: tu JS NO usa el atributo [hidden], usa clases. Si tenías esto, bórralo o déjalo neutralizado. */
-.tile[hidden]{ display: none !important; }
-
-/* Animación controlada por clases */
-.gallery .tile{
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity .45s cubic-bezier(.2,.8,.2,1),
-    transform .45s cubic-bezier(.2,.8,.2,1);
-}
-
-.gallery .tile.is-hiding{
-  opacity: 0;
-  transform: translateY(6px);
-  pointer-events: none;
-}
-
-.gallery .tile.is-hidden{
-  opacity: 0;
-  transform: translateY(6px);
-  pointer-events: none;
-  position: absolute;
-  visibility: hidden;
-}
 
 /* ============ FOOTER ============ */
 
@@ -1048,7 +959,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 .project-title-band {
   background: var(--oxford);
-  height: 340px;
+  padding: 2.6rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1078,7 +989,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 .project-title-band h1 {
   margin: 0;
   color: #fafaf5;
-  font-size: clamp(3rem, 7vw, 6rem);
+  font-size: clamp(3rem, 5vw, 6rem);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1106,7 +1017,6 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 /* móvil */
 @media (max-width: 720px) {
   .project-title-band {
-    min-height: 260px;
     padding: 2rem 0;
   }
 
@@ -1143,14 +1053,6 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 }
 
 @media (max-width: 720px) {
-  .project-title-band {
-    min-height: 240px;
-  }
-
-  .project-title-band .container {
-    padding: 3.5rem 0 3rem;
-  }
-
   .project-grid {
     grid-template-columns: 1fr;
     margin: 2.5rem auto;
