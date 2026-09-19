@@ -784,16 +784,17 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 .site-footer {
   background: var(--oxford);
   color: #f5f2ec;
-  padding: 4rem 3rem 2.5rem;
+  padding: 4rem 0 2.5rem;
 }
 
-/* Contenedor centrado */
+/* Contenedor centrado: mismo ancho que .container, para quedar
+   alineado con el header y el resto del contenido del sitio */
 .footer-grid {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
-  max-width: 1300px;
-  margin: 0 auto;
+  width: min(1100px, 92%);
+  margin-inline: auto;
 }
 
 .footer-col {
@@ -938,12 +939,7 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 @media (max-width: 720px) {
   .site-footer {
-    padding: 3rem 1.8rem 2rem;   /* ← padding lateral para mobile */
-  }
-
-  .footer-grid {
-    padding-left: 0.3rem;
-    padding-right: 0.3rem;
+    padding: 3rem 0 2rem;
   }
 
   .footer-copy {
