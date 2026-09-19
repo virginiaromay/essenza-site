@@ -65,6 +65,10 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 .container{ width: min(1100px, 92%); margin-inline: auto; }
 
+/* Variante ancha: mismo ancho que el header/footer (min(1300px,92%)),
+   para páginas de contenido que deben quedar alineadas con el logo */
+.container-wide{ width: min(1300px, 92%); margin-inline: auto; }
+
 /* Encabezado de las páginas de Proyectos (listado, comerciales, residenciales, todos):
    mismo ancho que el header/footer (min(1300px,92%)) para quedar alineado con el
    logo, y con más espacio respecto al header fijo */
