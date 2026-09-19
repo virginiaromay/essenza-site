@@ -65,6 +65,15 @@ h3{ font-weight: 300; font-size: 1.1rem; }
 
 .container{ width: min(1100px, 92%); margin-inline: auto; }
 
+/* Encabezado de las páginas de Proyectos (listado, comerciales, residenciales, todos):
+   mismo ancho que el header/footer (min(1300px,92%)) para quedar alineado con el
+   logo, y con más espacio respecto al header fijo */
+.proyectos-intro{
+  width: min(1300px, 92%);
+  margin-inline: auto;
+  margin-top: 5rem;
+}
+
 /* ===================== ENCABEZADO ===================== */
 /* El header usa el mismo ancho que el footer (más pegado a los bordes
    que el .container genérico del resto de las secciones) */
